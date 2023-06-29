@@ -28,7 +28,7 @@
         <range uom="25" subset="0-2" nls="MODE" />
     </editor>
     <editor id="MODECL">
-        <range uom="25" subset="0-13" nls="MODE" />
+        <range uom="25" subset="0-13" nls="MODECL" />
     </editor>
     <editor id="MODE1">
         <range uom="25" subset="0-5" nls="MODE1" />

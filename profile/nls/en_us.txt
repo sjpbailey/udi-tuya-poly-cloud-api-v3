@@ -43,14 +43,14 @@ ST-lgtv2-GV2-NAME = Light Status
 ST-lgtv2-GV3-NAME = Light Level
 ST-lgtv2-GV4-NAME = Light Mode Command
 #ST-lgtv2-GV5-NAME = Light Color Command
-#ST-lgtv2-GV5-NAME = Light Colour
+ST-lgtv2-GV5-NAME = Light Colour
 #ST-lgtv2-GV6-NAME = Light Scene
 #ST-lgtv2-GV7-NAME = Light Music
 #ST-lgtv2-GV8-NAME = Light White
 
 CMD-lgtv2-LGTON-NAME = Light On
 CMD-lgtv2-LGTOF-NAME = Light Off
-CMD-lgtv2-LGTCFLIP-NAME = Light Test
+CMD-lgtv2-LGTCL-NAME = Light Color
 CMD-lgtv2-STLVL-NAME = Set Level
 CMD-lgtv2-MODE-NAME = Command
 
