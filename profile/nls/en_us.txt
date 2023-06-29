@@ -21,7 +21,7 @@ ST-lgtv1-ST-NAME = Node Status
 ST-lgtv1-GV2-NAME = Light Status
 ST-lgtv1-GV3-NAME = Light Level
 ST-lgtv1-GV4-NAME = Light Mode Command
-#ST-lgtv1-GV5-NAME = Light Color Command
+ST-lgtv1-GV5-NAME = Light Color Command
 #ST-lgtv1-GV5-NAME = Light Colour
 #ST-lgtv1-GV6-NAME = Light Scene
 #ST-lgtv1-GV7-NAME = Light Music
@@ -75,9 +75,8 @@ MODECL-10 = Indigo High
 MODECL-11 = Indigo Low
 MODECL-12 = Violet High
 MODECL-13 = Violet Low
-MODECL-14 = White Work
-MODECL-15 = White Colour
-
+MODECL-14 = White Colour
+MODECL-15 = White Work
 
 
 # Switch
