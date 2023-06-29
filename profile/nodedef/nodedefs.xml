@@ -51,7 +51,7 @@
         <sts>
             <st id="ST" editor="bool" />
             <st id="GV2" editor="bool" />
-            <st id="GV3" editor="LEVEL" />
+            <!--<st id="GV3" editor="LEVEL" />-->
             <st id="GV4" editor="MODE" />
             <st id="GV5" editor="MODECL" />
         </sts>
