@@ -68,11 +68,10 @@
 
                 <cmd id="MODE">
                     <p id="" editor="MODE" init="GV4" />
+                </cmd>
 
                 <cmd id="LGTCL">
                     <p id="" editor="MODECL" init="GV5" />
-                </cmd>
-
                 </cmd>
 
                 <cmd id="QUERY" />
