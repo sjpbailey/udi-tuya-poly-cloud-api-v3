@@ -58,7 +58,7 @@ CMD-lgtv2-MODE-NAME = Command
 # LED Modes
 MODE-0 = Colour
 MODE-1 = Scene
-#MODE-2 = Music
+MODE-2 = Music
 
 # LED Color
 MODECL-0 = Red High
