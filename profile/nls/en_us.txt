@@ -30,9 +30,10 @@ ST-lgtv1-GV4-NAME = Light Mode Command
 
 CMD-lgtv1-LGTON-NAME = Light On
 CMD-lgtv1-LGTOF-NAME = Light Off
-#CMD-lgtv1-LGTCFLIP-NAME = Light Test
-#CMD-lgtv1-STLVL-NAME = Set Level
+CMD-lgtv1-LGTCL-NAME = Light Color
+CMD-lgtv1-STLVL-NAME = Set Level
 CMD-lgtv1-MODE-NAME = Command
+#CMD-lgtv1-LGTCFLIP-NAME = Light Test
 
 
 # LightNodeV2
