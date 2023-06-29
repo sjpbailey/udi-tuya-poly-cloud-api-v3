@@ -179,7 +179,7 @@
         <editors />
         <sts>
             <st id="ST" editor="bool" />
-            <st id="GV2" editor="RUNB" />
+            <st id="GV2" editor="RUNBOB" />
             <st id="GV3" editor="MODE1" />
             <st id="GV7" editor="MODEM" />
             <st id="GV8" editor="MODES" />

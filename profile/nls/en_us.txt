@@ -136,7 +136,7 @@ ST-bot-GV7-NAME = Manual Control
 ST-bot-GV8-NAME = Suction
 ST-bot-GV9-NAME = Water Level
 ST-bot-GV5-NAME = Battery %
-ST-bot-TIME-NAME = clean Time
+ST-bot-TIME-NAME = Clean Time
 
 
 #ST-bot-GV8-NAME = Light White
@@ -165,8 +165,8 @@ MODEM-3 = Turn Right
 MODEM-4 = Stop
 
 # Robot Go
-RUNB-0 = Docked
-RUNB-1 = Running
+RUNBOB-0 = Docked
+RUNBOB-1 = Running
 
 # Suction
 MODESU-0 = Low

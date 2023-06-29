@@ -42,7 +42,7 @@
     <editor id="STATB">
         <range uom="25" subset="0-8" nls="STATB" />
     </editor>
-    <editor id="RUNB">
-        <range uom="25" subset="0-8" nls="RUNB" />
+    <editor id="RUNBOB">
+        <range uom="25" subset="0-1" nls="RUNBOB" />
     </editor>
 </editors>
