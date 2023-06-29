@@ -125,11 +125,11 @@
     <nodeDef id="relay" nls="rly">
         <editors />
         <sts>
-            <st id="ST" editor="bool" />
             <st id="GV2" editor="bool" />
             <st id="GV3" editor="bool" />
             <st id="GV4" editor="bool" />
             <st id="GV5" editor="bool" />
+            <st id="ST" editor="bool" />
         </sts>
         <cmds>
             <sends />
@@ -178,7 +178,6 @@
     <nodeDef id="robvac" nls="bot">
         <editors />
         <sts>
-            <st id="ST" editor="bool" />
             <st id="GV2" editor="RUNBOB" />
             <st id="GV3" editor="MODE1" />
             <st id="GV7" editor="MODEM" />
@@ -186,6 +185,7 @@
             <st id="GV4" editor = "STATB" />
             <st id="GV5" editor="B_PERCENT" />
             <st id="TIME" editor="B_TIME" />
+            <st id="ST" editor="bool" />
             
         </sts>
         <cmds>

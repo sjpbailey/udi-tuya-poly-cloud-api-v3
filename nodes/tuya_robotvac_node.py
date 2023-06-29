@@ -285,7 +285,6 @@ class RobvacNode(udi_interface.Node):
         self.reportDrivers()
 
     drivers = [
-        {'driver': 'ST', 'value': 1, 'uom': 2},
         {'driver': 'GV2', 'value': 0, 'uom': 25},
         {'driver': 'GV3', 'value': 0, 'uom': 25},
         {'driver': 'GV4', 'value': 0, 'uom': 25},
@@ -293,6 +292,7 @@ class RobvacNode(udi_interface.Node):
         {'driver': 'TIME', 'value': 0, 'uom': 56},
         {'driver': 'GV7', 'value': 0, 'uom': 25},
         {'driver': 'GV8', 'value': 0, 'uom': 25},
+        {'driver': 'ST', 'value': 1, 'uom': 2},
 
     ]
 
