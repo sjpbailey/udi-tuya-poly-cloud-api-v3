@@ -27,7 +27,7 @@
             <accepts>
                 <cmd id="LGTON" />
                 <cmd id="LGTOF" />
-                <cmd id="LGTCL" />
+                <!--<cmd id="LGTCL" />-->
                 <!--<cmd id="LGTCFLIP" />-->
 
                 <cmd id="STLVL">
@@ -38,7 +38,7 @@
                     <p id="" editor="MODE" init="GV4" />
                 </cmd>
                 
-                <cmd id="MODECL">
+                <cmd id="LGTCL">
                     <p id="" editor="MODECL" init="GV5" />
                 </cmd>
 
