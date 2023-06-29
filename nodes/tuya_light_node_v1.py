@@ -264,18 +264,7 @@ class LightNode(udi_interface.Node):
             LOGGER.info('Violet low')
             time.sleep(.5)
             self.SwStat(self)
-        # White WorkMode
         elif self.setClr == 14:
-            commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
-            #commands = {'commands': [
-            #    {'code': 'colour_data', 'value': '{\"h\":118,\"s\":45,\"v\":10}'}]}
-            openapi.post(
-                '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
-            LOGGER.info('White')
-            time.sleep(.5)
-            self.SwStat(self)
-            # White Colour
-        elif self.setClr == 15:
             #commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
             commands = {'commands': [
                 {'code': 'colour_data', 'value': '{\"h\":118,\"s\":45,\"v\":1000}'}]}
@@ -305,10 +294,10 @@ class LightNode(udi_interface.Node):
         if percent < 1 or percent > 100:
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
-            # commands = {'commands': [
-            #    {'code': 'colour_data', 'value': '{\"h\":272,\"s\":1000,\"v\":' + str(percent*10) + '}'}]}
             commands = {'commands': [
-                {'code': 'bright_value', 'value': int(percent)*10}]}
+                {'code': 'colour_data', 'value': '{\"h\":272,\"s\":1000,\"v\":' + str(percent*10) + '}'}]}
+            #commands = {'commands': [
+            #    {'code': 'bright_value', 'value': int(percent)*10}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
 
