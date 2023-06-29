@@ -39,7 +39,7 @@ response1 = json.dumps(response, indent=4)  # current, indent=4
 #    outfile.write(str(response1))
 
 
-"""################################## LED RGB TEST ###############################
+################################## LED RGB TEST ###############################
 # 'ebe097c0407da32084kvtr'  # 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58
 DEVICELED_ID = 'ebfc16d57ed374932cjqfk'
 
@@ -49,19 +49,38 @@ bulb = Bulb(
             device_id=DEVICELED_ID,
             region_key=API_REGION,
 )
-current_colour = json.loads(bulb.current_value("colour_data_v2")) #colour_data_v2 #bright_value_v2
-print(current_colour)            
-            # Conversion current HSV to RGB
+current_colour = json.loads(bulb.current_value("scene_data_v2")) #colour_data_v2 #bright_value_v2
+print(current_colour)
+for i in current_colour['scene_units']:
+    print(i['bright'])            
+
+#commands = {'commands': [{'code': 'colour_data_v2', 'value': '{\"h\":0,\"s\":1000,\"v\":1000}'}]}
+#openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+# (255, 0, 0)
+#print('Red')
+#print(current_colour)"""
+new_lvl = int(10) #int(new_lvl)*10
+commands = {'commands': [{'code': 'temp_value_v2', 'value':int(new_lvl) }]}
+openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+bri_lvl = int(1000) #int(new_lvl)*10
+commands = {'commands': [{'code': 'bright_value_v2', 'value':int(bri_lvl) }]}
+openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+#current_rgb = tuple(map(lambda x:int(1000), current_colour))
+#print('????')
+
+
+
+"""            # Conversion current HSV to RGB
 current_colour = colorsys.hsv_to_rgb(
     h=current_colour["h"] / 360,
     s=current_colour["s"] / 1000,
     v=current_colour["v"] / 1000,
     )
-print("h s v")
+print("current color h s v")
 print(current_colour)
 # Convert the current RGB to format 0-255
 current_rgb = tuple(map(lambda x: int(x * 255), current_colour))
-#print("r g b" )
+print("current color r g b" )
 #print(current_rgb)
 
 rainbow = {"red": [255, 0, 0], "orange": [255, 127, 0], "yellow": [255, 200, 0], "green": [
@@ -69,8 +88,8 @@ rainbow = {"red": [255, 0, 0], "orange": [255, 127, 0], "yellow": [255, 200, 0],
 
         
 r = (255)
-g = (200)
-b = (0)
+g = (0)
+b = (100)
 
 new_colour = (r, g, b)
 # Convert RGB coordinates to int
@@ -82,26 +101,32 @@ time.sleep(2)
 
 h = float(0)
 s = float(0)
-v = float(1000)
+v = float(15)
 new_hsv = (h, s, v)
 new_hsv = tuple(map(lambda x: float(x * 1), new_hsv))
 print(new_hsv)
-#bulb.set_colour_v2(new_hsv)
+bulb.set_colour_v2(new_hsv)
 
-#new_lvl = tuple(map(lambda x: float(x * 1), new_hsv))
-#bulb.bright_value_v2(new_lvl)
+new_lvl = tuple(map(lambda x: float(x * 1), new_hsv))
+bulb.scene_data_v2(new_lvl)
 
-commands = {'commands': [{'code': 'colour_data_v2', 'value': '{\"bright\":0'}]}
-openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+## Brightness
+#commands = {'commands': [{'code': 'colour_data_v2', 'value': '{\"bright\":1000'}]}
+#openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
 #time.sleep(2)
-#new_lvl = (10)
+new_lvl = int(1000)
 #commands = {'commands': [{'code': 'temp_value_v2', 'value': int(new_lvl)*10}]}
 #openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
-print(current_colour)
+#commands = {'commands': [{'code': 'bright_value_v2', 'value': 1000}]}
+#openapi.post(
+#    '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+#commands = {'commands': [
+#                {'code': 'colour_data_v2', 'value': '{\"h\":0,\"s\":1000,\"v\":new_lvl}'}]}"""
+#
 
 
 
-cmd_code = 'colour_data_v2'
+"""cmd_code = 'colour_data_v2'
 
 def set_color(rgb):
     hsv = colorsys.rgb_to_hsv(rgb[0] / 255.0, rgb[1] / 255.0, rgb[2] / 255.0)
@@ -116,14 +141,11 @@ def set_color(rgb):
         }]
     }
 
-# hsv = colorsys.rgb_to_hsv(rgb[0] / 255.0, rgb[1] / 255.0, rgb[2] / 255.0)
-# print(hsv)
+#hsv = colorsys.rgb_to_hsv(rgb[0] / 255.0, rgb[1] / 255.0, rgb[2] / 255.0)
+#print(hsv)
 # '{\"h\":255,\"s\":0,\"v\":10}'}]}  # \"h\":272,\"s\":1000,
-commands = {'commands': [{'code': 'bright_value_v2', 'value': 1000}]}
-openapi.post(
-    '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
 
-# c.sendcommand(id, commands)
+#c.sendcommand(id, commands)
 
 
 # Rainbow values
@@ -135,9 +157,9 @@ rainbow = {"red": (255, 0, 0), "orange": (255, 127, 0), "yellow": (255, 200, 0),
 for color in rainbow:
     print("Changing color to %s" % color)
     set_color(rainbow[color])
-    time.sleep(5)
+    time.sleep(5)"""
 
-{
+"""{
             "active_time": 1610958307,
             "biz_type": 0,
             "category": "dj",
@@ -729,7 +751,7 @@ for i in response['result']:
                     
                     
 
-
+"""
 ########################       Sweeping Robot     ###################################################
 # Switch Node
 DEVICEBOT_ID = 'eb5add4f3bbf86a94bs3o6'
@@ -835,4 +857,4 @@ result ={
             "uid": "az1610958067414WkfOO",
             "update_time": 1687891472,
             "uuid": "853011974bc304be"
-        },
+        },"""

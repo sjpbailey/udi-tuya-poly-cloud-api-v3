@@ -58,14 +58,23 @@ CMD-lgtv2-MODE-NAME = Command
 MODE-0 = Colour
 MODE-1 = Scene
 MODE-2 = Music
-MODE-3 = Red
-MODE-4 = Orange
-MODE-5 = Yellow
-MODE-6 = Green
-MODE-7 = Blue
-MODE-8 = Indigo
-MODE-9 = Violet
-MODE-10 = White
+
+# LED Color
+MODECL-0 = Red High
+MODECL-1 = Red Low
+MODECL-2 = Orange High
+MODECL-3 = Orange low
+MODECL-4 = Yellow High
+MODECL-5 = Yellow Low
+MODECL-6 = Green High
+MODECL-7 = Green Low
+MODECL-8 = Blue High
+MODECL-9 = Blue Low
+MODECL-10 = Indigo High
+MODECL-11 = Indigo Low
+MODECL-12 = Violet High
+MODECL-13 = Violet Low
+MODECL-14 = White
 
 # Switch
 ND-switch-NAME = Switch 

@@ -25,7 +25,10 @@
         <range uom="51" min="1" max="100" step="1" prec="0"/>
     </editor>
     <editor id="MODE">
-        <range uom="25" subset="0-10" nls="MODE" />
+        <range uom="25" subset="0-2" nls="MODE" />
+    </editor>
+    <editor id="MODECL">
+        <range uom="25" subset="0-13" nls="MODE" />
     </editor>
     <editor id="MODE1">
         <range uom="25" subset="0-5" nls="MODE1" />
