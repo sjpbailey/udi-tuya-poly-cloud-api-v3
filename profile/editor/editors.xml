@@ -34,12 +34,15 @@
         <range uom="25" subset="0-4" nls="MODEM" />
     </editor>
     <editor id="MODES">
-        <range uom="25" subset="0-2" nls="MODES" />
+        <range uom="25" subset="0-2" nls="MODESU" />
     </editor>
     <editor id="MODESW">
         <range uom="25" subset="0-1" nls="MODESW" />
     </editor>
     <editor id="STATB">
-        <range uom="25" subset="0-8" nls="STAT" />
+        <range uom="25" subset="0-8" nls="STATB" />
+    </editor>
+    <editor id="RUNB">
+        <range uom="25" subset="0-8" nls="RUNB" />
     </editor>
 </editors>

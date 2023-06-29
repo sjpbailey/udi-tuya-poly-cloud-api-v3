@@ -99,7 +99,6 @@ CMD-swtdim-QUERY-NAME = Query
 MODESW-0 = halogen
 MODESW-1 = incandescent
 
-
 # Relay
 ND-relay-NAME = Relay 
 ND-relay-ICON = Switch
@@ -165,18 +164,22 @@ MODEM-2 = Turn Left
 MODEM-3 = Turn Right
 MODEM-4 = Stop
 
+# Robot Go
+RUNB-0 = Docked
+RUNB-1 = Running
+
 # Suction
-MODES-0 = Low
-MODES-1 = Normal
-MODES-2 = High
+MODESU-0 = Low
+MODESU-1 = Normal
+MODESU-2 = High
 
 # Robot status
-STAT-0 = Standby
-STAT-1 = Smart
-STAT-2 = Wall Clean
-STAT-3 = Spot Clean
-STAT-4 = Home to Charge
-STAT-5 = Charging
-STAT-6 = Charged
-STAT-7 = Cleaning
-STAT-8 = Sleep
+STATB-0 = Standby
+STATB-1 = Smart
+STATB-2 = Wall Clean
+STATB-3 = Spot Clean
+STATB-4 = Home to Charge
+STATB-5 = Charging
+STATB-6 = Charged
+STATB-7 = Cleaning
+STATB-8 = Sleep
