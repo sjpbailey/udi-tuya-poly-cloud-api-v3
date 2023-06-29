@@ -51,7 +51,7 @@ ST-lgtv2-GV5-NAME = Light Colour
 CMD-lgtv2-LGTON-NAME = Light On
 CMD-lgtv2-LGTOF-NAME = Light Off
 CMD-lgtv2-LGTCL-NAME = Light Color
-CMD-lgtv2-STLVL-NAME = Set Level
+CMD-lgtv2-STLVL-NAME = Level White
 CMD-lgtv2-MODE-NAME = Command
 
 # LED Modes
