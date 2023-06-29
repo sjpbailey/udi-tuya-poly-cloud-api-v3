@@ -272,7 +272,8 @@ class LightNode(udi_interface.Node):
             self.SwStat(self)
         # White
         elif self.setClr == 14:
-            commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
+            commands = {'commands': [
+                {'code': 'colour_data_v2', 'value': '{\"h\":118,\"s\":45,\"v\":10}'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             LOGGER.info('White')
