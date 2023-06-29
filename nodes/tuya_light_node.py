@@ -270,7 +270,7 @@ class LightNode(udi_interface.Node):
             LOGGER.info('Violet low')
             time.sleep(.5)
             self.SwStat(self)
-        # White
+        # White WorkMode
         elif self.setClr == 14:
             commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
             #commands = {'commands': [
@@ -278,6 +278,16 @@ class LightNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             LOGGER.info('White')
+            time.sleep(.5)
+            self.SwStat(self)
+            # White Colour
+        elif self.setClr == 15:
+            #commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
+            commands = {'commands': [
+                {'code': 'colour_data_v2', 'value': '{\"h\":118,\"s\":45,\"v\":10}'}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+            LOGGER.info('White Colour')
             time.sleep(.5)
             self.SwStat(self)
         else:
