@@ -194,7 +194,7 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V1")
                 LOGGER.info('\n')
-                node = tuya_light_node_v1.LightNode(
+                node = tuya_light_node.LightNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
