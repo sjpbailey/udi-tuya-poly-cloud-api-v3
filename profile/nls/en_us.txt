@@ -74,7 +74,10 @@ MODECL-10 = Indigo High
 MODECL-11 = Indigo Low
 MODECL-12 = Violet High
 MODECL-13 = Violet Low
-MODECL-14 = White
+MODECL-14 = White WorkMode
+MODECL-15 = White Colour
+
+
 
 # Switch
 ND-switch-NAME = Switch 
