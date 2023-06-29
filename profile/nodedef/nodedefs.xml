@@ -39,7 +39,7 @@
                 </cmd>
                 
                 <cmd id="MODECL">
-                    <p id="" editor="MODECL" init="GV4" />
+                    <p id="" editor="MODECL" init="GV5" />
                 </cmd>
 
                 <cmd id="QUERY" />
