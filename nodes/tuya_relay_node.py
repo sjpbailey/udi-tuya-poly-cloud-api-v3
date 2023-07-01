@@ -57,7 +57,7 @@ class RelayNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_1', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.SwStat(self)
 
     def setSwOn2(self, command):
@@ -71,7 +71,7 @@ class RelayNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_2', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.SwStat(self)
 
     def setSwOff2(self, command):
@@ -85,7 +85,7 @@ class RelayNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_2', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.SwStat(self)
 
     def setSwOn3(self, command):
@@ -99,7 +99,7 @@ class RelayNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_3', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.SwStat(self)
 
     def setSwOff3(self, command):
@@ -113,7 +113,7 @@ class RelayNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_3', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.SwStat(self)
 
     def setSwOn4(self, command):
@@ -127,7 +127,7 @@ class RelayNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_4', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.SwStat(self)
 
     def setSwOff4(self, command):
@@ -141,7 +141,7 @@ class RelayNode(udi_interface.Node):
         commands = {'commands': [{'code': 'switch_4', 'value': False}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.SwStat(self)
 
     def SwStat(self, command):
