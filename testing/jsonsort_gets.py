@@ -39,7 +39,7 @@ response1 = json.dumps(response, indent=4)  # current, indent=4
 #    outfile.write(str(response1))
 
 
-################################## LED RGB TEST ###############################
+"""################################## LED RGB TEST ###############################
 # 'ebe097c0407da32084kvtr'  # 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58
 DEVICELED_ID = 'ebfc16d57ed374932cjqfk'
 
@@ -58,7 +58,7 @@ for i in current_colour['scene_units']:
 #openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
 # (255, 0, 0)
 #print('Red')
-#print(current_colour)"""
+#print(current_colour)
 new_lvl = int(10) #int(new_lvl)*10
 commands = {'commands': [{'code': 'temp_value_v2', 'value':int(new_lvl) }]}
 openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
@@ -66,7 +66,7 @@ bri_lvl = int(1000) #int(new_lvl)*10
 commands = {'commands': [{'code': 'bright_value_v2', 'value':int(bri_lvl) }]}
 openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
 #current_rgb = tuple(map(lambda x:int(1000), current_colour))
-#print('????')
+#print('????')"""
 
 
 
@@ -751,7 +751,7 @@ for i in response['result']:
                     
                     
 
-"""
+
 ########################       Sweeping Robot     ###################################################
 # Switch Node
 DEVICEBOT_ID = 'eb5add4f3bbf86a94bs3o6'
@@ -770,7 +770,7 @@ response = openapi.get(
 
 
 #Sweeping Robot
-for i in response['result'][3:4]:
+for i in response['result'][7:8]:
     print(i['code'])
     print(i['value'])
     if i['value'] == 'charge_done':
@@ -797,7 +797,7 @@ for i in response['result'][3:4]:
         print("no")
 
 
-result ={
+"""result ={
             "active_time": 1687891468,
             "biz_type": 0,
             "category": "sd",
