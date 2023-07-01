@@ -50,7 +50,7 @@ class RobvacNode(udi_interface.Node):
         commands = {'commands': [{'code': 'power_go', 'value': True}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.setDriver('GV2', 1)
         #self.SwStat(self)
 
@@ -66,7 +66,7 @@ class RobvacNode(udi_interface.Node):
         commands = {'commands': [{'code': 'mode', 'value': 'chargego'}]}
         openapi.post(
             '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
-        time.sleep(.5)
+        time.sleep(.1)
         self.setDriver('GV2', 0)
         #self.SwStat(self)
 
@@ -86,7 +86,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Charge')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Standby
         elif self.modeOn == 1:
@@ -94,7 +94,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Standby')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Spiral
         elif self.modeOn == 2:
@@ -102,7 +102,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Spiral')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Wall Follow
         elif self.modeOn == 3:
@@ -110,7 +110,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Wall Follow')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Random
         elif self.modeOn == 4:
@@ -118,7 +118,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Random')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Partial Bow
         elif self.modeOn == 5:
@@ -148,7 +148,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Forward')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Backward
         elif self.modeMan == 1:
@@ -156,7 +156,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Backwards')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Turn Left
         elif self.modeMan == 2:
@@ -164,7 +164,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Turn Left')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Turn Right
         elif self.modeMan == 3:
@@ -172,7 +172,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Turn Right')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Stop
         elif self.modeMan == 4:
@@ -180,7 +180,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Stop')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         else:
             pass
@@ -202,7 +202,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Suction Gentle')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Suction Normal
         elif self.modeSuc == 1:
@@ -210,7 +210,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Suction Normal')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Suction High
         elif self.modeSuc == 2:
@@ -218,7 +218,7 @@ class RobvacNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEBOT_ID), commands)
             LOGGER.info('Suction High')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         else:
             pass
