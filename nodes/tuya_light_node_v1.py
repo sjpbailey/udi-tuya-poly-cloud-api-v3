@@ -121,7 +121,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (255, 0, 0)
             LOGGER.info('Red High')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Red Low
         if self.setClr == 1:
@@ -132,7 +132,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (255, 0, 0)
             LOGGER.info('Red Low')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Orange High
         elif self.setClr == 2:
@@ -143,7 +143,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (255, 127, 0)
             LOGGER.info('Orange High')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Orange low
         elif self.setClr == 3:
@@ -154,7 +154,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (255, 127, 0)
             LOGGER.info('Orange Low')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)    
         # Yellow High
         elif self.setClr == 4:
@@ -165,7 +165,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (255, 200, 0)
             LOGGER.info('Yellow High')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Yellow Low
         elif self.setClr == 5:
@@ -176,7 +176,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (255, 200, 0)
             LOGGER.info('Yellow Low')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Green High
         elif self.setClr == 6:
@@ -187,7 +187,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (0, 255, 0)
             LOGGER.info('Green High')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Green Low
         elif self.setClr == 7:
@@ -198,7 +198,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (0, 255, 0)
             LOGGER.info('Green Low')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Blue High
         elif self.setClr == 8:
@@ -209,7 +209,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (0, 0, 255)
             LOGGER.info('Blue High')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Blue Low
         elif self.setClr == 9:
@@ -220,7 +220,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (0, 0, 255)
             LOGGER.info('Blue Low')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Indigo High
         elif self.setClr == 10:
@@ -231,7 +231,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (46, 43, 95)
             LOGGER.info('Indigo High')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Indigo Low
         elif self.setClr == 11:
@@ -242,7 +242,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (46, 43, 95)
             LOGGER.info('Indigo Low')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Violet High
         elif self.setClr == 12:
@@ -253,7 +253,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (139, 0, 255)
             LOGGER.info('Violet High')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         # Violet Low
         elif self.setClr == 13:
@@ -264,7 +264,7 @@ class LightNode(udi_interface.Node):
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             # (139, 0, 255)
             LOGGER.info('Violet low')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         elif self.setClr == 14:
             #commands = {'commands': [{'code': 'work_mode', 'value': 'white'}]}
@@ -273,7 +273,7 @@ class LightNode(udi_interface.Node):
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             LOGGER.info('White Colour')
-            time.sleep(.5)
+            time.sleep(.1)
             self.SwStat(self)
         else:
             pass
