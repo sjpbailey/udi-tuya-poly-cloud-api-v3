@@ -20,6 +20,7 @@ from nodes import tuya_relay_node
 from nodes import tuya_switch_node
 from nodes import tuya_switch_dimmer_node
 from nodes import tuya_light_node
+from nodes import tuya_light_node_rgb
 from nodes import tuya_light_node_v1
 
 LOGGER = udi_interface.LOGGER
@@ -202,7 +203,7 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2")
                 LOGGER.info('\n')
-                node = tuya_light_node.LightNode(
+                node = tuya_light_node_rgb.LightNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
