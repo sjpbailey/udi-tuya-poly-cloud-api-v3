@@ -324,17 +324,6 @@ class LightNode(udi_interface.Node):
         
         """rainbow = {"red": [255, 0, 0], "orange": [255, 127, 0], "yellow": [255, 200, 0], "green": [
             0, 255, 0], "blue": [0, 0, 255], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]}"""
-        
-        new_bright = percent
-        if new_bright < 2:
-            new_bright = 2
-        new_bright1 = 100*1/(new_bright)
-        new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
-        
-        #new_colour = (h,l,s)#new_level)
-        new_colour = tuple(map(lambda x: int(x), new_colour))
-        print('new color RGB')
-        
 
         ivr_one = 'percent'
         percent = int(command.get('value'))
@@ -344,9 +333,18 @@ class LightNode(udi_interface.Node):
         if percent < 1 or percent > 100:
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
-            LOGGER.info(new_colour)
-            # Set colour ✨
-            bulb.set_colour_v2(new_colour)
+            new_bright = percent
+            if new_bright < 2:
+                new_bright = 2
+                new_bright1 = 100*1/(new_bright)
+                new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
+        
+                #new_colour = (h,l,s)#new_level)
+                new_colour = tuple(map(lambda x: int(x), new_colour))
+                print('new color RGB')
+                LOGGER.info(new_colour)
+                # Set colour ✨
+                bulb.set_colour_v2(new_colour)
         
         #whi_vlv = 10
         #bulb.set_bright_v2(whi_vlv)
