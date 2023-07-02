@@ -13,7 +13,6 @@ import json
 from tuya_connector import (
     TuyaOpenAPI,)
 
-from nodes import tuya_light_node_tkinter
 from nodes import tuya_robotvac_node
 from nodes import tuya_pulsar_node
 from nodes import tuya_pir_node
@@ -167,7 +166,7 @@ class TuyaController(udi_interface.Node):
             model = i['model']
             LOGGER.info(model)
             # "switch_1" in i['status'][0]['code']:
-            """if i['model'] == "SS01S(\u4e0d\u5206\u8d1f\u8f7d)\u4e50\u946b":
+            if i['model'] == "SS01S(\u4e0d\u5206\u8d1f\u8f7d)\u4e50\u946b":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
                 LOGGER.info('\n')
@@ -198,8 +197,8 @@ class TuyaController(udi_interface.Node):
                 node = tuya_light_node_v1.LightNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
-                self.wait_for_node_done()"""
-            if i['model'] == "SL10":
+                self.wait_for_node_done()
+            elif i['model'] == "SL10":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2")
                 LOGGER.info('\n')
@@ -207,10 +206,8 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            else:
-                LOGGER.info("OTHER DEVICE")
             
-            """elif i['product_name'] == "120V A19 9W SMART BULB":
+            elif i['product_name'] == "120V A19 9W SMART BULB":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2")
                 LOGGER.info('\n')
@@ -235,7 +232,7 @@ class TuyaController(udi_interface.Node):
                 self.poly.addNode(node)
                 self.wait_for_node_done()
             else:
-                LOGGER.info("OTHER DEVICE")"""
+                LOGGER.info("OTHER DEVICE")
                     
             """
             elif i['model'] == "PIR-wifi-V01":
