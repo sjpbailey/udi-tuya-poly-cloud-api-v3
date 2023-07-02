@@ -330,21 +330,21 @@ class LightNode(udi_interface.Node):
 
         def set_percent(self, command):
             percent = int(command.get('value')*1)
-        if percent < 1 or percent > 100:
-            LOGGER.error('Invalid Level {}'.format(percent))
-        else:
-            new_bright = percent
-            if new_bright < 2:
-                new_bright = 2
-                new_bright1 = 100*1/(new_bright)
-                new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
+        #if percent < 1 or percent > 100:
+        #    LOGGER.error('Invalid Level {}'.format(percent))
+        #else:
+        new_bright = percent
+        if new_bright < 2:
+            new_bright = 2
+            new_bright1 = 100*1/(new_bright)
+            new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
         
-                #new_colour = (h,l,s)#new_level)
-                new_colour = tuple(map(lambda x: int(x), new_colour))
-                print('new color RGB')
-                LOGGER.info(new_colour)
-                # Set colour ✨
-                bulb.set_colour_v2(new_colour)
+            #new_colour = (h,l,s)#new_level)
+            new_colour = tuple(map(lambda x: int(x), new_colour))
+            print('new color RGB')
+            LOGGER.info(new_colour)
+            # Set colour ✨
+            bulb.set_colour_v2(new_colour)
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
