@@ -17,13 +17,13 @@ from tuya_bulb_control import Bulb
 bulb = Bulb(
     client_id="txejpdfda9iwmn5cg2es",
     secret_key="46d6072ffd724e0ba5ebeb5cc6b9dce9",
-    device_id="ebe097c0407da32084kvtr",
+    device_id="ebfc16d57ed374932cjqfk",
     region_key="us",
 )
 # def change_colour() -> NoReturn:
 # Get current HSV colour
 current_colour = json.loads(bulb.current_value(
-    "colour_data"))  # For Version 2 # new_colour_v2
+    "colour_data_v2"))  # For Version 2 # new_colour_v2
 print(current_colour)
 # Conversion current HSV to RGB
 current_colour = colorsys.hsv_to_rgb(
@@ -38,7 +38,7 @@ print(current_colour)
 # colorchooser.askcolor(color=current_colour)[0]
 
 # "orange": [255, 127, 0], "yellow": [255, 200, 0], "green": [
-rainbow = {"red": [0, 1000, 1000], }
+rainbow = {"red": [255, 000, 0], }
 #   0, 255, 0], "blue": [0, 0, 255], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]}
 
 for x in range(2):
@@ -55,7 +55,7 @@ for x in range(2):
         print(new_colour)
         # Set colour ✨
         # For Version 2 # set_colour_v2(new_color)
-        bulb.set_colour(new_colour)
+        bulb.set_colour_v2(new_colour)
 
 """def toggle_status(button) -> NoReturn:
     # Turn ON or OFF
