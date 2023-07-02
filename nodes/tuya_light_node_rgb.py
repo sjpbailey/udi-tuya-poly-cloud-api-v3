@@ -316,36 +316,35 @@ class LightNode(udi_interface.Node):
         #if percent < 1 or percent > 100:
         #    LOGGER.error('Invalid Level {}'.format(percent))
         #else:
-            bulb = Bulb(
-                client_id=ACCESS_ID,
-                secret_key=ACCESS_KEY,
-                device_id=DEVICELED_ID,
-                region_key=API_REGION,
-                )
-            current_colour = json.loads(bulb.current_value("colour_data_v2"))
-            LOGGER.info('incoming color HSL')
-            LOGGER.info(current_colour)
-            # Conversion current HSV to RGB
-            current_colour = colorsys.hsv_to_rgb(
-                h=current_colour["h"] / 360,
-                s=current_colour["s"] / 1000,
-                v=current_colour["v"] / 1000,)
-            # Convert the current RGB to format 0-255
-            current_colour = tuple(map(lambda x: int(x * 255), current_colour))
-            LOGGER.info('color RGB')
-            LOGGER.info(current_colour)
-            new_bright = percent
-            if new_bright < 2:
-                new_bright = 2
-                new_bright1 = 100*1/(new_bright)
-                new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
-        
-                #new_colour = (h,l,s)#new_level)
-                new_colour = tuple(map(lambda x: int(x), new_colour))
-                print('new color RGB')
-                LOGGER.info(new_colour)
-                # Set colour ✨
-                bulb.set_colour_v2(new_colour)
+        bulb = Bulb(
+            client_id=ACCESS_ID,
+            secret_key=ACCESS_KEY,
+            device_id=DEVICELED_ID,
+            region_key=API_REGION,
+            )
+        current_colour = json.loads(bulb.current_value("colour_data_v2"))
+        LOGGER.info('incoming color HSL')
+        LOGGER.info(current_colour)
+        # Conversion current HSV to RGB
+        current_colour = colorsys.hsv_to_rgb(
+            h=current_colour["h"] / 360,
+            s=current_colour["s"] / 1000,
+            v=current_colour["v"] / 1000,)
+        # Convert the current RGB to format 0-255
+        current_colour = tuple(map(lambda x: int(x * 255), current_colour))
+        LOGGER.info('color RGB')
+        LOGGER.info(current_colour)
+        new_bright = percent
+        if new_bright < 2:
+            new_bright = 2
+            new_bright1 = 100*1/(new_bright)
+            new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
+            #new_colour = (h,l,s)#new_level)
+            new_colour = tuple(map(lambda x: int(x), new_colour))
+            print('new color RGB')
+            LOGGER.info(new_colour)
+            # Set colour ✨
+            bulb.set_colour_v2(new_colour)
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
