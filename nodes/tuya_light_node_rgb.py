@@ -329,8 +329,8 @@ class LightNode(udi_interface.Node):
         percent = int(command.get('value'))
 
         def set_percent(self, command):
-            percent = int(command.get('value')*10)
-        if percent < 1 or percent > 1000:
+            percent = int(command.get('value')*1)
+        if percent < 1 or percent > 100:
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
             new_bright = percent
