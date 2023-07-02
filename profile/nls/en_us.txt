@@ -55,6 +55,26 @@ CMD-lgtv2-LGTCL-NAME = Light Color
 CMD-lgtv2-STLVL-NAME = Level White
 CMD-lgtv2-MODE-NAME = Command
 
+# LightNodeRGB
+ND-lightrgb-NAME = Light Node V2
+ND-lightrgb-ICON = LampAndSwitch
+ST-lgtrgb-ST-NAME = Node Status
+ST-lgtrgb-GV2-NAME = Light Status
+ST-lgtrgb-GV3-NAME = Light Level
+ST-lgtrgb-GV4-NAME = Light Mode Command
+#ST-lgtrgb-GV5-NAME = Light Color Command
+ST-lgtrgb-GV5-NAME = Light Colour
+#ST-lgtrgb-GV6-NAME = Light Scene
+#ST-lgtrgb-GV7-NAME = Light Music
+#ST-lgtrgb-GV8-NAME = Light White
+
+CMD-lgtrgb-LGTON-NAME = Light On
+CMD-lgtrgb-LGTOF-NAME = Light Off
+CMD-lgtrgb-LGTCL-NAME = Light Color
+CMD-lgtrgb-STLVL-NAME = Level White
+CMD-lgtrgb-LGTRGB-NAME = Light RGB
+CMD-lgtrgb-MODE-NAME = Command
+
 # LED Modes
 MODE-0 = Colour
 MODE-1 = Scene

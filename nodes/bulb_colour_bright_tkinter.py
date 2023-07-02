@@ -48,7 +48,7 @@ for i in response1["result"][4:5]:
 
     current_colour = json.loads(i['value'])
     #Bulb.current_value("colour_data_v2"))
-    #('incoming color HSV')
+    ('incoming color HSV')
     print(current_colour)
 
     # Conversion current HSV to RGB

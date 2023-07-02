@@ -46,6 +46,39 @@
             </accepts>
         </cmds>
     </nodeDef>
+    <nodeDef id="lightrgb" nls="lgtrgb">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+            <st id="GV3" editor="LEVEL" />
+            <st id="GV4" editor="MODE" />
+            <st id="GV5" editor="MODECL" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="LGTON" />
+                <cmd id="LGTOF" />
+                <cmd id="LGTRGB" />
+                <!--<cmd id="LGTCFLIP" />-->
+
+                <cmd id="STLVL">
+                    <p id="" editor="LEVEL" init="GV3" />
+                </cmd>
+
+                <cmd id="MODE">
+                    <p id="" editor="MODE" init="GV4" />
+                </cmd>
+                
+                <cmd id="LGTCL">
+                    <p id="" editor="MODECL" init="GV5" />
+                </cmd>
+
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
     <nodeDef id="lightv1" nls="lgtv1">
         <editors />
         <sts>
