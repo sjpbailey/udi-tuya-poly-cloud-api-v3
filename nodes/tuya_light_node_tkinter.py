@@ -351,9 +351,9 @@ class LightNode(udi_interface.Node):
             current_colour = tuple(map(lambda x: int(x * 255), current_colour))
             LOGGER.info(current_colour)
             # Tkinter Colour adjustment
-            new_colour = colorchooser.askcolor(color=current_colour)[0]
+            #new_colour = colorchooser.askcolor(color=current_colour)[0]
             LOGGER.info('current color RGB')
-            LOGGER.info(new_colour)
+            #LOGGER.info(new_colour)
             
             bulb = Bulb(
             client_id=ACCESS_ID,
