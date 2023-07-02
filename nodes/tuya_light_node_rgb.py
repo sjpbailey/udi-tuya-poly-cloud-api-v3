@@ -306,8 +306,8 @@ class LightNode(udi_interface.Node):
         API_REGION = self.API_REGION
         
         bulb = Bulb(
-            client_id=API_ENDPOINT,
-            secret_key=ACCESS_ID,
+            client_id=ACCESS_ID,
+            secret_key=ACCESS_KEY,
             device_id=DEVICELED_ID,
             region_key=API_REGION,
         )
