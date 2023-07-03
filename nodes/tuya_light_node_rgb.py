@@ -297,6 +297,23 @@ class LightNode(udi_interface.Node):
         else:
             pass
 
+    def Set_colorR(self, command):
+        ivr_one = 'rout'
+        rout = int(command.get('value'))
+        def set_r(self, command):
+            rout = int(command.get('value')*1)
+        
+    def Set_colorG(self, command):
+        ivr_two = 'gout'
+        gout = int(command.get('value'))
+        def set_r(self, command):
+            gout = int(command.get('value')*1)
+    def Set_colorB(self, command):
+        ivr_thr = 'bout'
+        bout = int(command.get('value'))
+        def set_r(self, command):
+            bout = int(command.get('value')*1)
+
     # Led Level
     def setDim(self, command):
         API_ENDPOINT = self.API_ENDPOINT
@@ -304,7 +321,7 @@ class LightNode(udi_interface.Node):
         ACCESS_KEY = self.ACCESS_KEY
         DEVICELED_ID = self.DEVICELED_ID
         API_REGION = self.API_REGION
-
+        
         """rainbow = {"red": [255, 0, 0], "green": [0, 255, 0], "blue": [0, 0, 255],"orange": [255, 127, 0], "yellow": [255, 200, 0], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]}"""
 
         ivr_one = 'percent'
@@ -332,16 +349,16 @@ class LightNode(udi_interface.Node):
         # Convert the current RGB to format 0-255
         current_colour = tuple(map(lambda x: int(x * 255), current_colour))
         LOGGER.info('color RGB')
-        LOGGER.info(current_colour)
+        LOGGER.info(current_colour)        
         
         # Set Color
         for i in current_colour:
-            r = 255
-            g = 0
-            b = 0
+            r = self.setDriver("GV6")
+            g = self.setDriver("GV7")
+            b = self.setDriver("GV8")
         #print(i)
         #print('    %s (%d,%d,%d)' % (i, r, g, b))
-
+        
         """Colors = {"red": [255, 0, 0], "orange": [255, 127, 0], "yellow": [255, 200, 0], "green": [
                 0, 255, 0], "blue": [0, 0, 255], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]} "green": [0, 128, 0]}"""
 
@@ -367,24 +384,6 @@ class LightNode(udi_interface.Node):
                 #print(new_colour)
                 # Set colour ✨
                 bulb.set_colour_v2(new_colour)
-        
-        
-        
-        
-        
-        
-        """new_bright = percent
-        if new_bright < 2:
-            new_bright = 2
-        new_bright1 = 100*1/(new_bright)
-        
-        new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
-        #new_colour = (h,l,s)#new_level)
-        new_colour = tuple(map(lambda x: int(x), new_colour))
-        print('new color RGB')
-        LOGGER.info(new_colour)
-        # Set colour ✨
-        bulb.set_colour_v2(new_colour)"""
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
@@ -425,6 +424,9 @@ class LightNode(udi_interface.Node):
         {'driver': 'GV3', 'value': 0, 'uom': 51},
         {'driver': 'GV4', 'value': 0, 'uom': 25},
         {'driver': 'GV5', 'value': 0, 'uom': 25},
+        {'driver': 'GV6', 'value': 0, 'uom': 100},
+        {'driver': 'GV7', 'value': 0, 'uom': 100},
+        {'driver': 'GV8', 'value': 0, 'uom': 100},
 
     ]
 
@@ -437,5 +439,8 @@ class LightNode(udi_interface.Node):
         #'LGTCFLIP': setclrflip,
         'MODE': modeOn,
         'STLVL': setDim,
+        'STLR': Set_colorR,
+        'STLG': Set_colorG,
+        'STLB': Set_colorB,
         'QUERY': query,
     }

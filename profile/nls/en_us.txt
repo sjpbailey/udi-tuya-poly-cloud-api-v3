@@ -72,7 +72,11 @@ CMD-lgtrgb-LGTON-NAME = Light On
 CMD-lgtrgb-LGTOF-NAME = Light Off
 CMD-lgtrgb-LGTCL-NAME = Light Color
 CMD-lgtrgb-STLVL-NAME = Level White
-CMD-lgtrgb-LGTRGB-NAME = Light RGB
+CMD-lgtrgb-STLR-NAME = Set R
+CMD-lgtrgb-STLG-NAME = Set g
+CMD-lgtrgb-STLB-NAME = Set b
+
+
 CMD-lgtrgb-MODE-NAME = Command
 
 # LED Modes
