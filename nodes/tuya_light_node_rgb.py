@@ -334,17 +334,18 @@ class LightNode(udi_interface.Node):
         current_colour = tuple(map(lambda x: int(x * 255), current_colour))
         LOGGER.info('color RGB')
         LOGGER.info(current_colour)
+        
         new_bright = percent
         if new_bright < 2:
             new_bright = 2
-            new_bright1 = 100*1/(new_bright)
-            new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
-            #new_colour = (h,l,s)#new_level)
-            new_colour = tuple(map(lambda x: int(x), new_colour))
-            print('new color RGB')
-            LOGGER.info(new_colour)
-            # Set colour ✨
-            bulb.set_colour_v2(new_colour)
+        new_bright1 = 100*1/(new_bright)
+        new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
+        #new_colour = (h,l,s)#new_level)
+        new_colour = tuple(map(lambda x: int(x), new_colour))
+        print('new color RGB')
+        LOGGER.info(new_colour)
+        # Set colour ✨
+        bulb.set_colour_v2(new_colour)
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
