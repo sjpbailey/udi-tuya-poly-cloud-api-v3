@@ -455,8 +455,8 @@ class LightNode(udi_interface.Node):
         #'LGTCFLIP': setclrflip,
         'MODE': modeOn,
         'STLVL': setDim,
-        'STLR': Set_colorR,
-        'STLG': Set_colorG,
-        'STLB': Set_colorB,
+        #'STLR': Set_colorR,
+        #'STLG': Set_colorG,
+        #'STLB': Set_colorB,
         'QUERY': query,
     }
