@@ -64,9 +64,9 @@ ST-lgtrgb-GV3-NAME = Light Level
 ST-lgtrgb-GV4-NAME = Light Mode Command
 #ST-lgtrgb-GV5-NAME = Light Color Command
 ST-lgtrgb-GV5-NAME = Light Colour
-#ST-lgtrgb-GV6-NAME = Light Scene
-#ST-lgtrgb-GV7-NAME = Light Music
-#ST-lgtrgb-GV8-NAME = Light White
+ST-lgtrgb-GV6-NAME = R
+ST-lgtrgb-GV7-NAME = G
+ST-lgtrgb-GV8-NAME = B
 
 CMD-lgtrgb-LGTON-NAME = Light On
 CMD-lgtrgb-LGTOF-NAME = Light Off
