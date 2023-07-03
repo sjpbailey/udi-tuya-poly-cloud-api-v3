@@ -54,6 +54,9 @@
             <st id="GV3" editor="LEVEL" />
             <st id="GV4" editor="MODE" />
             <st id="GV5" editor="MODECL" />
+            <st id="GV6" editor="LEVELC" />
+            <st id="GV7" editor="LEVELC" />
+            <st id="GV8" editor="LEVELC" />
         </sts>
         <cmds>
             <sends />
@@ -68,15 +71,15 @@
                 </cmd>
 
                 <cmd id="STLR">
-                    <p id="" editor="LEVEL" init="GV6" />
+                    <p id="" editor="LEVELC" init="GV6" />
                 </cmd>
 
                 <cmd id="STLG">
-                    <p id="" editor="LEVEL" init="GV7" />
+                    <p id="" editor="LEVELC" init="GV7" />
                 </cmd>
 
                 <cmd id="STLB">
-                    <p id="" editor="LEVEL" init="GV8" />
+                    <p id="" editor="LEVELC" init="GV8" />
                 </cmd>
 
                 <cmd id="MODE">

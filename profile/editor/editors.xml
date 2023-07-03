@@ -24,6 +24,9 @@
     <editor id="LEVEL">
         <range uom="51" min="1" max="100" step="1" prec="0"/>
     </editor>
+    <editor id="LEVEC">
+        <range uom="100" min="1" max="255" step="1" prec="0"/>
+    </editor>
     <editor id="MODE">
         <range uom="25" subset="0-1" nls="MODE" />
     </editor>

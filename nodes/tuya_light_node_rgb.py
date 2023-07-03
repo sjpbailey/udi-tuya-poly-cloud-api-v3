@@ -351,6 +351,9 @@ class LightNode(udi_interface.Node):
         LOGGER.info('color RGB')
         LOGGER.info(current_colour)        
         
+        
+        
+        
         # Set Color
         for i in current_colour:
             r = "GV6"
