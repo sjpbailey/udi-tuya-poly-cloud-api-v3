@@ -297,22 +297,21 @@ class LightNode(udi_interface.Node):
         else:
             pass
 
-    """def Set_colorR(self, command):
-        ivr_one = 'rout'
+    def Set_colorR(self, command):
+        ivr_two = 'rout'
         rout = int(command.get('value'))
         def set_r(self, command):
-            rout = int(command.get('value')*1)
-        
+            self.rout = int(command.get('value')*1)    
     def Set_colorG(self, command):
-        ivr_two = 'gout'
+        ivr_thr = 'gout'
         gout = int(command.get('value'))
         def set_r(self, command):
-            gout = int(command.get('value')*1)
+            self.gout = int(command.get('value')*1)
     def Set_colorB(self, command):
         ivr_thr = 'bout'
         bout = int(command.get('value'))
         def set_r(self, command):
-            bout = int(command.get('value')*1)"""
+            self.bout = int(command.get('value')*1)
 
     # Led Level
     def setDim(self, command):
@@ -351,27 +350,19 @@ class LightNode(udi_interface.Node):
         LOGGER.info('color RGB')
         LOGGER.info(current_colour)        
         
-        ivr_one = 'rout'
-        rout = int(command.get('value'))
-        def set_r(self, command):
-            rout = int(command.get('value')*1)
+        def Set_colorR(self, command):
+            ivr_one = 'rout'
+            rout = int(command.get('value'))
+            def set_r(self, command):
+                rout = int(command.get('value')*1)
         
-        def Set_colorG(self, command):
-            ivr_two = 'gout'
-        gout = int(command.get('value'))
-        def set_r(self, command):
-            gout = int(command.get('value')*1)    
-        
-        ivr_thr = 'bout'
-        bout = int(command.get('value'))
-        def set_r(self, command):
-            bout = int(command.get('value')*1)
+   
         
         # Set Color
         for i in current_colour:
-            r = rout
-            g = gout
-            b = bout
+            r = self.rout
+            g = self.gout
+            b = self.bout
         #print(i)
         #print('    %s (%d,%d,%d)' % (i, r, g, b))
         
@@ -455,8 +446,8 @@ class LightNode(udi_interface.Node):
         #'LGTCFLIP': setclrflip,
         'MODE': modeOn,
         'STLVL': setDim,
-        #'STLR': Set_colorR,
-        #'STLG': Set_colorG,
-        #'STLB': Set_colorB,
+        'STLR': Set_colorR,
+        'STLG': Set_colorG,
+        'STLB': Set_colorB,
         'QUERY': query,
     }
