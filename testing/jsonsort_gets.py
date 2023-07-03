@@ -34,12 +34,12 @@ response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
 # Save polling data sample
 # current = {'timestamp': time.time(), 'devices': response}
 response1 = json.dumps(response, indent=4)  # current, indent=4
-#print(response1)
+print(response1)
 
 # Writing to sample.json
 # with open("sample.json", "w") as outfile:
 #    outfile.write(str(response1))
-DEVICELED_ID = 'ebfc16d57ed374932cjqfk'
+"""DEVICELED_ID = 'ebfc16d57ed374932cjqfk'
 response1 = openapi.get(
             "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")  # DEVICE_ID
 #print(response1["colour_data_v2"])
@@ -73,7 +73,7 @@ for i in response1["result"][4:5]:
     region_key="us",)
     
     #Set colour ✨
-    bulb.set_colour_v2(new_colour)
+    bulb.set_colour_v2(new_colour)"""
 
 """################################## LED RGB TEST ###############################
 # 'ebe097c0407da32084kvtr'  # 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58

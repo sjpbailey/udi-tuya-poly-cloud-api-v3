@@ -339,6 +339,7 @@ class LightNode(udi_interface.Node):
         if new_bright < 2:
             new_bright = 2
         new_bright1 = 100*1/(new_bright)
+        
         new_colour = [255/new_bright1, 255/new_bright1, 255/new_bright1] 
         #new_colour = (h,l,s)#new_level)
         new_colour = tuple(map(lambda x: int(x), new_colour))

@@ -38,7 +38,7 @@ print(current_colour)
 # colorchooser.askcolor(color=current_colour)[0]
 
 # "orange": [255, 127, 0], "yellow": [255, 200, 0], "green": [
-rainbow = {"red": [255, 000, 0], }
+rainbow = {"red": [240/1, 000/1, 0/1], }
 #   0, 255, 0], "blue": [0, 0, 255], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]}
 
 for x in range(2):
