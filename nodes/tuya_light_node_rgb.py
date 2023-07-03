@@ -353,9 +353,9 @@ class LightNode(udi_interface.Node):
         
         # Set Color
         for i in current_colour:
-            r = self.setDriver("GV6")
-            g = self.setDriver("GV7")
-            b = self.setDriver("GV8")
+            r = "GV6"
+            g = "GV7"
+            b = "GV8"
         #print(i)
         #print('    %s (%d,%d,%d)' % (i, r, g, b))
         
