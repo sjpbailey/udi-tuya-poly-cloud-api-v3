@@ -218,6 +218,7 @@ class TuyaController(udi_interface.Node):
                 self.wait_for_node_done()
             else:
                 LOGGER.info("OTHER DEVICE")
+            self.pulsar()
                     
             """
             elif i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)":
@@ -259,7 +260,7 @@ class TuyaController(udi_interface.Node):
         
     def pulsar(self):
         pass
-        """LOGGER.info("Add Pulsar")
+        LOGGER.info("Add Pulsar")
         address = "pulsa_1"
         name = "Pulsar"
         new_id = "pul_1"
@@ -269,7 +270,7 @@ class TuyaController(udi_interface.Node):
         LOGGER.info('\n')
         node = tuya_pulsar_node.PullNode(self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiMq)
         self.poly.addNode(node)
-        self.wait_for_node_done()"""
+        self.wait_for_node_done()
 
     def remove_notices_all(self, command):
         self.Notices.clear()    
