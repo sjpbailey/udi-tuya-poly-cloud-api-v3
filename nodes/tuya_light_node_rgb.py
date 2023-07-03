@@ -305,8 +305,7 @@ class LightNode(udi_interface.Node):
         DEVICELED_ID = self.DEVICELED_ID
         API_REGION = self.API_REGION
 
-        """rainbow = {"red": [255, 0, 0], "orange": [255, 127, 0], "yellow": [255, 200, 0], "green": [
-            0, 255, 0], "blue": [0, 0, 255], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]}"""
+        """rainbow = {"red": [255, 0, 0], "green": [0, 255, 0], "blue": [0, 0, 255],"orange": [255, 127, 0], "yellow": [255, 200, 0], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]}"""
 
         ivr_one = 'percent'
         percent = int(command.get('value'))
@@ -335,7 +334,46 @@ class LightNode(udi_interface.Node):
         LOGGER.info('color RGB')
         LOGGER.info(current_colour)
         
-        new_bright = percent
+        # Set Color
+        for i in current_colour:
+            r = 255
+            g = 0
+            b = 0
+        #print(i)
+        #print('    %s (%d,%d,%d)' % (i, r, g, b))
+
+        """Colors = {"red": [255, 0, 0], "orange": [255, 127, 0], "yellow": [255, 200, 0], "green": [
+                0, 255, 0], "blue": [0, 0, 255], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]} "green": [0, 128, 0]}"""
+
+        ### Set Dimmer
+        dim = percent
+        
+        if dim < 2:
+            dim = 2
+        dimmer = 100*1/(dim)
+        rainbow = {"red": [r/dimmer, g/dimmer, b/dimmer],}
+        #print(current_colour)
+        for x in range(2):
+            for i in rainbow:
+                r = rainbow[i][0]
+                g = rainbow[i][1]
+                b = rainbow[i][2]
+                time.sleep(2)
+                #print('    %s (%d,%d,%d)' % (i, r, g, b))
+                new_colour = (r, g, b)
+                # print(new_colour)
+                # Convert RGB coordinates to int
+                new_colour = tuple(map(lambda x: int(x), new_colour))
+                #print(new_colour)
+                # Set colour ✨
+                bulb.set_colour_v2(new_colour)
+        
+        
+        
+        
+        
+        
+        """new_bright = percent
         if new_bright < 2:
             new_bright = 2
         new_bright1 = 100*1/(new_bright)
@@ -346,7 +384,7 @@ class LightNode(udi_interface.Node):
         print('new color RGB')
         LOGGER.info(new_colour)
         # Set colour ✨
-        bulb.set_colour_v2(new_colour)
+        bulb.set_colour_v2(new_colour)"""
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT

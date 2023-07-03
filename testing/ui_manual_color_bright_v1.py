@@ -15,11 +15,13 @@ from tuya_bulb_control import Bulb
 bulb = Bulb(
     client_id="txejpdfda9iwmn5cg2es",
     secret_key="46d6072ffd724e0ba5ebeb5cc6b9dce9",
-    device_id="eb64341be3d433d8615eib",
+    device_id="ebe097c0407da32084kvtr",
     region_key="us",
 )
 
-current_colour = json.loads(bulb.current_value("colour_data_v1"))
+bulb.turn_on()
+time.sleep(1)
+current_colour = json.loads(bulb.current_value("colour_data"))
 #print('incoming color HSL')
 #print(current_colour)
 #print(type(current_colour))
@@ -38,9 +40,9 @@ print(current_colour)
 ### Set Color
 h= 255
 s= 0
-v= 119
+v= 0
 ### Set Dimmer
-dim = 1
+dim = 100
 if dim < 2:
     dim = 2
 dimmer = 100*1/(dim)
