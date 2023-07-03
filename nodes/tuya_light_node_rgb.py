@@ -297,7 +297,7 @@ class LightNode(udi_interface.Node):
         else:
             pass
 
-    def Set_colorR(self, command):
+    """def Set_colorR(self, command):
         ivr_one = 'rout'
         rout = int(command.get('value'))
         def set_r(self, command):
@@ -312,7 +312,7 @@ class LightNode(udi_interface.Node):
         ivr_thr = 'bout'
         bout = int(command.get('value'))
         def set_r(self, command):
-            bout = int(command.get('value')*1)
+            bout = int(command.get('value')*1)"""
 
     # Led Level
     def setDim(self, command):
@@ -351,14 +351,27 @@ class LightNode(udi_interface.Node):
         LOGGER.info('color RGB')
         LOGGER.info(current_colour)        
         
+        ivr_one = 'rout'
+        rout = int(command.get('value'))
+        def set_r(self, command):
+            rout = int(command.get('value')*1)
         
+        def Set_colorG(self, command):
+            ivr_two = 'gout'
+        gout = int(command.get('value'))
+        def set_r(self, command):
+            gout = int(command.get('value')*1)    
         
+        ivr_thr = 'bout'
+        bout = int(command.get('value'))
+        def set_r(self, command):
+            bout = int(command.get('value')*1)
         
         # Set Color
         for i in current_colour:
-            r = "GV6"
-            g = "GV7"
-            b = "GV8"
+            r = rout
+            g = gout
+            b = bout
         #print(i)
         #print('    %s (%d,%d,%d)' % (i, r, g, b))
         
