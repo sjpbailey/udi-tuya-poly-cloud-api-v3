@@ -216,6 +216,14 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
+            elif i['model'] == "PIR-wifi-V01" or i['name'] == "PIR" or i['name'] == "PIR Sensor " or i['model'] == "AW201_CBU" or i['name'] == "Contact Sensor":
+                LOGGER.info('Device Type')
+                LOGGER.info("PIR")
+                LOGGER.info('\n')
+                node = tuya_pir_node.PirNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
             else:
                 LOGGER.info("OTHER DEVICE")
             self.pulsar()
