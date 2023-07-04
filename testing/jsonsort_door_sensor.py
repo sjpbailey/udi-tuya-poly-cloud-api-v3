@@ -38,36 +38,8 @@ response1 = json.dumps(response, indent=4)  # current, indent=4
 # with open("sample.json", "w") as outfile:
 #    outfile.write(str(response1))
 
-
-"""for i in response['result']:
-            name = i['name']
-            deviceid = i['id']
-            id1 = deviceid[-7:].lstrip('.')
-            address = id1
-            product_name = i['product_name']
-            #print('Name')
-            #print(i['name'])
-            #print('ID')
-            #print(i['id'])
-            print(i['product_name'])
-            #print('Status')
-            #print(i['status'][0]['value'])
-            
-            # Incrementing addressing for Node Server ID
-            print(i['id'])
-            deviceid = i['id']
-            id1 = deviceid[-7:].lstrip('.')
-            new_id = id1
-            print('Address')
-            print(address)
-            model = i['model']
-            print(model)
-            product_name = i['product_name']
-            print(product_name)"""
-
-
 ############################### Device ID's ###################################
-# 'ebe097c0407da32084kvtr'  # 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58
+# Contact Sensor 'eb1a6a7a7f7a5caebcgick 
 DEVICELED_ID = 'eb1a6a7a7f7a5caebcgick'
 
 """# Switch Node
@@ -113,7 +85,7 @@ while True:
 
 
 
-# Door
+# Door Contact Sensor
 """"result" [{
             "active_time": 1688442261,
             "biz_type": 0,
@@ -154,9 +126,35 @@ for i in ['result']:
     model = i['model']
     print(name)
     print(model)"""
+    
+"""for i in response['result']:
+            name = i['name']
+            deviceid = i['id']
+            id1 = deviceid[-7:].lstrip('.')
+            address = id1
+            product_name = i['product_name']
+            #print('Name')
+            #print(i['name'])
+            #print('ID')
+            #print(i['id'])
+            print(i['product_name'])
+            #print('Status')
+            #print(i['status'][0]['value'])
+            
+            # Incrementing addressing for Node Server ID
+            print(i['id'])
+            deviceid = i['id']
+            id1 = deviceid[-7:].lstrip('.')
+            new_id = id1
+            print('Address')
+            print(address)
+            model = i['model']
+            print(model)
+            product_name = i['product_name']
+            print(product_name)"""    
 
 
-
+# PIR
 ############################### Device ID's ###################################
 """# 'ebe097c0407da32084kvtr'  # 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58
 DEVICELED_ID = 'ebe097c0407da32084kvtr'

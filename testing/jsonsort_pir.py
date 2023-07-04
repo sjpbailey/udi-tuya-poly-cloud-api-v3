@@ -32,46 +32,18 @@ response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
 # Save polling data sample
 # current = {'timestamp': time.time(), 'devices': response}
 response1 = json.dumps(response, indent=4)  # current, indent=4
-print(response1)
+#print(response1)
 
 # Writing to sample.json
 # with open("sample.json", "w") as outfile:
 #    outfile.write(str(response1))
 
 
-for i in response['result']:
-            name = i['name']
-            deviceid = i['id']
-            id1 = deviceid[-7:].lstrip('.')
-            address = id1
-            product_name = i['product_name']
-            #print('Name')
-            #print(i['name'])
-            #print('ID')
-            #print(i['id'])
-            print(i['product_name'])
-            #print('Status')
-            #print(i['status'][0]['value'])
-            
-            # Incrementing addressing for Node Server ID
-            """print(i['id'])
-            deviceid = i['id']
-            id1 = deviceid[-7:].lstrip('.')
-            new_id = id1
-            print('Address')
-            print(address)
-            model = i['model']
-            print(model)
-            product_name = i['product_name']
-            print(product_name)"""
-
-
-
 ############################### Device ID's ###################################
-"""# 'ebe097c0407da32084kvtr'  # 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58
-DEVICELED_ID = 'ebe097c0407da32084kvtr'
+# PIR 'eb29412a460a068676g8cv'  # PIR Sensor 'eb5e5f786fffbf04b9ldxl' 
+DEVICELED_ID = 'eb29412a460a068676g8cv'
 
-# Switch Node
+"""# Switch Node
 DEVICESW_ID = '68635610e8db84fff7ea'
 
 # Switch Node
@@ -81,7 +53,11 @@ DEVICEPIR_ID = 'eb29412a460a068676g8cv'"""
 # API will be passed from controller
 #openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
 #openapi.connect()
-
+#openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+response = openapi.get(
+            "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")  # DEVICE_ID
+#print(response1["colour_data_v2"])
+print(response)
 
 
 # do not run it just keeps going and going lol
@@ -90,14 +66,17 @@ while True:
     print("tick")
     time.sleep(1.5 - ((time.time() - starttime) % 1.5))"""
 
-"""for i in response['result']:
-    name = i['name']
-    model = i['model']
-    print(name)
-    print(model)"""
+for i in response['result'][0:1]:
+    #name = i['name']
+    #model = i['model']
+    #print(name)
+    print(i['value'])
+    
+#### Statuses
+# response['result'][0:1] = {'code': 'pir', 'value': 'none'}, i["value"] = 'none'
+# response['result'][1:2] = {'code': 'battery_percentage', 'value': 100}, i['value']) = 100%
 
-
-# PIR
+#### PIR
 """{
             "active_time": 1686981690,
             "biz_type": 0,
@@ -130,9 +109,9 @@ while True:
             "uid": "az1610958067414WkfOO",
             "update_time": 1687288443,
             "uuid": "8390601eff14128c"
-        },"""
+        },
 
-"""{
+    {
             "active_time": 1688118544,
             "biz_type": 0,
             "category": "pir",
@@ -164,4 +143,30 @@ while True:
             "uid": "az1610958067414WkfOO",
             "update_time": 1688118945,
             "uuid": "7c864f922baac602"
-        },"""
+        },
+        
+    for i in response['result']:
+            name = i['name']
+            deviceid = i['id']
+            id1 = deviceid[-7:].lstrip('.')
+            address = id1
+            product_name = i['product_name']
+            #print('Name')
+            #print(i['name'])
+            #print('ID')
+            #print(i['id'])
+            print(i['product_name'])
+            #print('Status')
+            #print(i['status'][0]['value'])
+            
+            # Incrementing addressing for Node Server ID
+            print(i['id'])
+            deviceid = i['id']
+            id1 = deviceid[-7:].lstrip('.')
+            new_id = id1
+            print('Address')
+            print(address)
+            model = i['model']
+            print(model)
+            product_name = i['product_name']
+            print(product_name)"""

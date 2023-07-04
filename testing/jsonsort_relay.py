@@ -32,25 +32,51 @@ response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
 # Save polling data sample
 # current = {'timestamp': time.time(), 'devices': response}
 response1 = json.dumps(response, indent=4)  # current, indent=4
-print(response1)
+#print(response1)
 
 # Writing to sample.json
 # with open("sample.json", "w") as outfile:
 #    outfile.write(str(response1))
 
 ############################### Device ID's ###################################
-"""# 'ebe097c0407da32084kvtr'  # 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58
-DEVICELED_ID = 'ebe097c0407da32084kvtr'
+# WiFi switch-4CH'68635610e8db84fff7ea'
+DEVICELED_ID = '68635610e8db84fff7ea'
 
-# Switch Node
+"""# Switch Node
 DEVICESW_ID = '68635610e8db84fff7ea'
 
 # Switch Node
 DEVICEPIR_ID = 'eb29412a460a068676g8cv'"""
 
 
+response1 = openapi.get(
+    "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")  # DEVICE_ID
+for i in response1['result'][3:4]:
+    print(i['value'])
+    #if i['value'] == True:
+    #    print('gotya')
 
-#### Four Channel Relay Json Model Number-"TY-DIY-S04"
+"""# Need to GET switch status Query NS
+print('\n''GET Response Switch Statuses''\n')
+openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
+openapi.connect()
+response1 = openapi.get(
+    "/v1.0/iot-03/devices/{}".format(DEVICESW_ID) + "/status/")  # DEVICE_ID
+print(response1)
+for i in response1['result'][0:1]:
+    # print(i)
+    print(i['value'])
+# print("\n")
+# print(response1)"""
+
+
+#### Statuses
+# response1['result'][0:1] = relay One
+# response1['result'][1:2] = relay two
+# response1['result'][2:3] = relay three
+# response1['result'][3:4] = relay four
+
+#### Commands Four Channel Relay Json Model Number-"TY-DIY-S04"
 """commands = {'commands': [{'code': 'switch_1', 'value': True}]}
 openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
 response = openapi.get("/v1.0/devices/{}".format(DEVICESW_ID))  # DEVICE_ID
@@ -91,26 +117,6 @@ time.sleep(2)
 openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICESW_ID), commands)
 response = openapi.get("/v1.0/devices/{}".format(DEVICESW_ID))  # DEVICE_ID
 print(response)"""
-
-"""response1 = openapi.get(
-    "/v1.0/iot-03/devices/{}".format(DEVICESW_ID) + "/status/")  # DEVICE_ID
-for i in response1['result'][3:4]:
-    print(i['value'])
-    if i['value'] == True:
-        print('gotya')"""
-
-"""# Need to GET switch status Query NS
-print('\n''GET Response Switch Statuses''\n')
-openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
-openapi.connect()
-response1 = openapi.get(
-    "/v1.0/iot-03/devices/{}".format(DEVICESW_ID) + "/status/")  # DEVICE_ID
-print(response1)
-for i in response1['result'][0:1]:
-    # print(i)
-    print(i['value'])
-# print("\n")
-# print(response1)"""
 
 
 """{

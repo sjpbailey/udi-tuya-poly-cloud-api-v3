@@ -45,6 +45,8 @@ DEVICEBOT_ID = 'eb5add4f3bbf86a94bs3o6'
 response = openapi.get(
     "/v1.0/iot-03/devices/{}".format(DEVICEBOT_ID) + "/status/")  # DEVICE_ID
 
+
+#### Statuses
 # ['result'][0:1] powergo ("True", "False")
 # ['result'][1:2] Mode ("standby","spiral","wall_follow","random","chargego","partial_bow")
 # ['result'][1:3] direction_control ("forward", "backward","turn_left","turn_right","stop")
@@ -83,7 +85,7 @@ for i in response['result'][3:4]:
     else:
         print("no")
 
-
+#### Robot Sweeper
 """result ={
             "active_time": 1687891468,
             "biz_type": 0,

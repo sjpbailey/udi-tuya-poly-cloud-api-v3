@@ -39,10 +39,17 @@ class PirNode(udi_interface.Node):
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
+        LOGGER.info('API_ENDPOINT')
+        LOGGER.info(API_ENDPOINT)
         ACCESS_ID = self.ACCESS_ID
+        LOGGER.info('ACCESS_ID')
+        LOGGER.info(ACCESS_ID)
         ACCESS_KEY = self.ACCESS_KEY
+        LOGGER.info('ACCESS_KEY')
+        LOGGER.info(ACCESS_KEY)
         DEVICESW_ID = self.DEVICESW_ID
-        
+        LOGGER.info('DEVICESW_ID')
+        LOGGER.info(DEVICESW_ID)
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
 
