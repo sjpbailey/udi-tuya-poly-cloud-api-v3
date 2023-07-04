@@ -56,15 +56,19 @@ DEVICEPIR_ID = 'eb29412a460a068676g8cv'"""
 #openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
 response = openapi.get(
             "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")  # DEVICE_ID
-#print(response1["colour_data_v2"])
+#print(response1)
 print(response)
-for i in response["result"][0:1]:
+for i in response['result']:
+    print(i)
+
+
+"""for i in response["result"][0:1]:
     print(i["code"])
     print(i["value"])
     if i["value"] == True:
         print("Opened Door")
     if i["value"] == False:
-        print("Door Closed")
+        print("Door Closed")"""
 
 
 
