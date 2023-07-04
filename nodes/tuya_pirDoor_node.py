@@ -34,6 +34,8 @@ class PirDNode(udi_interface.Node):
         self.ACCESS_KEY = apiSecret
         self.apiEndpoint = apiEndpoint
         self.API_ENDPOINT = apiEndpoint
+        self.name = self.name
+        LOGGER.info(name)
         self.setDriver('ST', 1)
         
 
