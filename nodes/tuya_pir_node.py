@@ -56,8 +56,8 @@ class PirNode(udi_interface.Node):
 
         response1 = openapi.get(
             "/v1.0/iot-03/devices/{}".format(DEVICESW_ID) + "/status/")
-        #LOGGER.info(response1)
         LOGGER.info(self.name)
+        LOGGER.info(response1)
         for i in response1['result'][1:2]:
             LOGGER.info('Battery {}'.format(i['value']))
             self.setDriver('GV3', i['value'])
