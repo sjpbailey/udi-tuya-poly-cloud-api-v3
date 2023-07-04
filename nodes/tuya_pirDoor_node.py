@@ -54,9 +54,9 @@ class PirDNode(udi_interface.Node):
             self.setDriver('GV3', i['value'])
             
         for i in response1['result'][0:1]:
-            if i['value'] == "True":
+            if i['value'] == True:
                 self.setDriver('GV2', 1)
-            elif i['value'] == "False":
+            elif i['value'] == False:
                 self.setDriver('GV2', 0)
 
     def poll(self, polltype):
@@ -76,7 +76,7 @@ class PirDNode(udi_interface.Node):
         {'driver': 'GV3', 'value': 0, 'uom': 51},
     ]
 
-    id = 'pirmd'
+    id = 'pirm'
 
     commands = {
         'QUERY': query

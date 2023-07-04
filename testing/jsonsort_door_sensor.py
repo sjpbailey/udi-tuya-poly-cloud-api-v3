@@ -89,6 +89,14 @@ print(response)
 for i in response["result"][0:1]:
     print(i["code"])
     print(i["value"])
+    if i["value"] == True:
+        print("Opened Door")
+    if i["value"] == False:
+        print("Door Closed")
+
+
+
+
 # do not run it just keeps going and going lol
 """starttime = time.time()
 while True:
