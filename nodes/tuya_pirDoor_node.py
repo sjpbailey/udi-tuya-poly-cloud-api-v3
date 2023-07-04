@@ -52,7 +52,6 @@ class PirDNode(udi_interface.Node):
         for i in response1['result'][1:2]:
             LOGGER.info(i['value'])
             self.setDriver('GV3', i['value'])
-            
         for i in response1['result'][0:1]:
             if i['value'] == True:
                 self.setDriver('GV2', 1)
