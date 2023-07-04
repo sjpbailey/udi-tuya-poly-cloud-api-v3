@@ -86,7 +86,7 @@ response = openapi.get(
             "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")  # DEVICE_ID
 #print(response1["colour_data_v2"])
 print(response)
-for i in response["result"][0:1]:
+for i in response["result"][1:2]:
     print(i["code"])
     print(i["value"])
 # do not run it just keeps going and going lol
