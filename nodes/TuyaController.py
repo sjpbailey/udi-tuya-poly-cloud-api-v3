@@ -216,7 +216,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "PIR-wifi-V01" or i['name'] == "PIR" or i['name'] == "PIR Sensor " or i['model'] == "AW201_CBU" or i['name'] == "Contact Sensor":
+            elif i['model'] == "PIR-wifi-V01" or i['product_name'] == "PIR Sensor " or i['product_name'] == "PIR " or i['product_name'] == "PIR Motion Detector Alarm" or i['model'] == "AW201_CBU" or i['product_name'] == "Contact Sensor":
                 LOGGER.info('Device Type')
                 LOGGER.info("PIR")
                 LOGGER.info('\n')
