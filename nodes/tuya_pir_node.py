@@ -37,7 +37,6 @@ class PirNode(udi_interface.Node):
         self.name = name
         LOGGER.info(name)
         self.setDriver('ST', 1)
-        
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
