@@ -31,35 +31,43 @@ print("Current")
 print(current_colour)
 
 
-for i in current_colour:
-    r = 255
-    g = 255
-    b = 255
-    #print(i)
-    #print('    %s (%d,%d,%d)' % (i, r, g, b))
+##  New Color
+#for i in current_colour:
+current_colour#[i][0] #255
+print('passed')
+print(current_colour)
+current_colour = tuple(map(lambda x: int(x), current_colour)) ##############so 1 = 100 and .2 is the low end
+newr = current_colour
+print(newr)
 
-"""Colors = {"red": [255, 0, 0], "orange": [255, 127, 0], "yellow": [255, 200, 0], "green": [
-            0, 255, 0], "blue": [0, 0, 255], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]} "green": [0, 128, 0]}"""
-
+# Set colour ✨
+bulb.set_colour_v2(newr)
 ### Set Dimmer
-dim = 1
+
+"""dim = 10
 
 if dim < 2:
     dim = 2
 dimmer = 100*1/(dim)
-rainbow = {"red": [r/dimmer, g/dimmer, b/dimmer],}
+#current_colour = {"red": [r/dimmer, r/dimmer, r/dimmer],}
 #print(current_colour)
-for x in range(2):
-    for i in rainbow:
-        r = rainbow[i][0]
-        g = rainbow[i][1]
-        b = rainbow[i][2]
-        #time.sleep(2)
-        #print('    %s (%d,%d,%d)' % (i, r, g, b))
-        new_colour = (r, g, b)
-        # print(new_colour)
-        # Convert RGB coordinates to int
-        new_colour = tuple(map(lambda x: int(x), new_colour))
-        #print(new_colour)
-        # Set colour ✨
-        bulb.set_colour_v2(new_colour)
+#for x in range(2):
+for i in r:
+    print(i)
+    #r = [i]
+    
+    #g = new_colour[i][1]
+        #b = new_colour[i][2]
+    #time.sleep(2)
+    #print('    %s (%d,%d,%d)' % (i, r, g, b))
+        #new1_colour = (r, g, b)
+    # print(new_colour)
+    # Convert RGB coordinates to int
+        #new_1colour = tuple(map(lambda x: int(x), new_colour))
+    #print(new_colour)
+    # Set colour ✨
+        #bulb.set_colour_v2(new1_colour)"""
+        
+        
+"""Colors = {"red": [255, 0, 0], "orange": [255, 127, 0], "yellow": [255, 200, 0], "green": [
+            0, 255, 0], "blue": [0, 0, 255], "indigo": [46, 43, 95], "violet": [139, 0, 255], "white": [255, 255, 255]} "green": [0, 128, 0]}"""        
