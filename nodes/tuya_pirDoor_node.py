@@ -76,7 +76,7 @@ class PirDNode(udi_interface.Node):
         {'driver': 'GV3', 'value': 0, 'uom': 51},
     ]
 
-    id = 'pirm'
+    id = 'pirmd'
 
     commands = {
         'QUERY': query

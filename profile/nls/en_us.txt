@@ -161,6 +161,14 @@ ST-pir-GV2-NAME = PIR Tripped
 ST-pir-GV3-NAME = Battery Percent
 CMD-pir-QUERY-NAME = Query
 
+# Door Motion
+ND-pirmd-NAME = PIR 
+ND-pirmd-ICON = MotionSensor
+ST-pir-ST-NAME = Node Status
+ST-pir-GV2-NAME = PIR Tripped
+ST-pir-GV3-NAME = Battery Percent
+CMD-pir-QUERY-NAME = Query
+
 # Robot
 ND-robvac-NAME = Robot Sweeper
 ND-robvac-ICON = GenericRspCtl

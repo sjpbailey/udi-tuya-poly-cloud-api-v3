@@ -219,6 +219,20 @@
             </accepts>
         </cmds>
     </nodeDef>
+    <nodeDef id="pirmd" nls="pir">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+            <st id="GV3" editor="I_PERCENT" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
     <nodeDef id="pulsa" nls="pula">
         <editors />
         <sts>
