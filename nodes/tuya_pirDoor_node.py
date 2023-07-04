@@ -51,14 +51,14 @@ class PirDNode(udi_interface.Node):
         LOGGER.info(self.name)
         LOGGER.info(response1)
         for i in response1['result'][1:2]:
-            LOGGER.info('Battery {}'.format(i['value']))
+            #LOGGER.info('Battery {}'.format(i['value']))
             self.setDriver('GV3', i['value'])
         for i in response1['result'][0:1]:
             if i['value'] == True:
-                LOGGER.info('PIR Trip {}'.format(i['value']))
+                #LOGGER.info('PIR Trip {}'.format(i['value']))
                 self.setDriver('GV2', 1)
             elif i['value'] == False:
-                LOGGER.info('PIR Normal {}'.format(i['value']))
+                #LOGGER.info('PIR Normal {}'.format(i['value']))
                 self.setDriver('GV2', 0)
 
     def poll(self, polltype):
