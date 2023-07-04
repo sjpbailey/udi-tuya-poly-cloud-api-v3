@@ -180,7 +180,7 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info('Device Type')
                 LOGGER.info("PIR")
                 LOGGER.info('\n')
-                node = tuya_pirDoor_node.PirNode(
+                node = tuya_pirDoor_node.PirDNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()

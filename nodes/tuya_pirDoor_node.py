@@ -2,7 +2,7 @@
 Polyglot v3 node server
 Copyright (C) 2023 Steven Bailey
 MIT License
-Version 3.0.1 Jun 2023
+Version 1.0.1 July 2023
 """
 import asyncio
 import udi_interface
@@ -18,9 +18,9 @@ from tuya_connector import (
 LOGGER = udi_interface.LOGGER
 
 
-class PirNode(udi_interface.Node):
+class PirDNode(udi_interface.Node):
     def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint):
-        super(PirNode, self).__init__(polyglot, primary, address, name)
+        super(PirDNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address, name)
         self.poly.subscribe(self.poly.START, self.start, address)
