@@ -39,7 +39,7 @@ response1 = json.dumps(response, indent=4)  # current, indent=4
 #    outfile.write(str(response1))
 
 
-for i in response['result']:
+"""for i in response['result']:
             name = i['name']
             deviceid = i['id']
             id1 = deviceid[-7:].lstrip('.')
@@ -54,7 +54,7 @@ for i in response['result']:
             #print(i['status'][0]['value'])
             
             # Incrementing addressing for Node Server ID
-            """print(i['id'])
+            print(i['id'])
             deviceid = i['id']
             id1 = deviceid[-7:].lstrip('.')
             new_id = id1
@@ -67,10 +67,10 @@ for i in response['result']:
 
 
 ############################### Device ID's ###################################
-"""# 'ebe097c0407da32084kvtr'  # 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58
-DEVICELED_ID = 'ebe097c0407da32084kvtr'
+# 'ebe097c0407da32084kvtr'  # 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58
+DEVICELED_ID = 'eb1a6a7a7f7a5caebcgick'
 
-# Switch Node
+"""# Switch Node
 DEVICESW_ID = '68635610e8db84fff7ea'
 
 # Switch Node
@@ -81,13 +81,20 @@ DEVICEPIR_ID = 'eb29412a460a068676g8cv'"""
 #openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
 #openapi.connect()
 
-
-
+#openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
+response = openapi.get(
+            "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")  # DEVICE_ID
+#print(response1["colour_data_v2"])
+print(response)
+for i in response["result"][0:1]:
+    print(i["code"])
+    print(i["value"])
 # do not run it just keeps going and going lol
 """starttime = time.time()
 while True:
     print("tick")
     time.sleep(1.5 - ((time.time() - starttime) % 1.5))"""
+
 
 """for i in response['result']:
     name = i['name']
@@ -99,7 +106,7 @@ while True:
 
 
 # Door
-"""{
+""""result" [{
             "active_time": 1688442261,
             "biz_type": 0,
             "category": "mcs",
@@ -112,29 +119,33 @@ while True:
             "lon": "-121.4700",
             "model": "AW201_CBU",
             "name": "Contact Sensor Test",
-            "online": true,
+            "online": True,
             "owner_id": "33161067",
             "product_id": "5clcipazwycf176m",
             "product_name": "Contact Sensor",
             "status": [
                 {
                     "code": "doorcontact_state",
-                    "value": false
+                    "value": False
                 },
                 {
                     "code": "battery_percentage",
                     "value": 100
                 }
             ],
-            "sub": false,
+            "sub": False,
             "time_zone": "-07:00",
             "uid": "az1610958067414WkfOO",
             "update_time": 1688442508,
             "uuid": "965c3d67e81e3106"
-        },"""
+        },]
 
 
-
+for i in ['result']:
+    name = i['name']
+    model = i['model']
+    print(name)
+    print(model)"""
 
 
 

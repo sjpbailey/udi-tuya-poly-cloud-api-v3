@@ -16,6 +16,7 @@ from tuya_connector import (
 from nodes import tuya_robotvac_node
 from nodes import tuya_pulsar_node
 from nodes import tuya_pir_node
+from nodes import tuya_pirDoor_node
 from nodes import tuya_relay_node
 from nodes import tuya_switch_node
 from nodes import tuya_switch_dimmer_node
@@ -172,6 +173,14 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info("PIR")
                 LOGGER.info('\n')
                 node = tuya_pir_node.PirNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
+            if i['model'] == "AW201_CBU" or i['product_name'] == "Contact Sensor":
+                LOGGER.info('Device Type')
+                LOGGER.info("PIR")
+                LOGGER.info('\n')
+                node = tuya_pirDoor_node.PirNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()

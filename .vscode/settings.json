@@ -11,6 +11,7 @@
         "DEVICELED",
         "DEVICEPIR",
         "DEVICESW",
+        "doorcontact",
         "iwmn",
         "kvtr",
         "LGTCL",
