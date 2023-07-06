@@ -38,6 +38,8 @@ class PirNode(udi_interface.Node):
         self.DEVICE_NAME = name
         LOGGER.info(name)
         self.setDriver('ST', 1)
+        time.sleep(2)
+        self.BtStat(self)
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT

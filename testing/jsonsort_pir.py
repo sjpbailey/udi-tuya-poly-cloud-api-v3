@@ -40,8 +40,8 @@ response1 = json.dumps(response, indent=4)  # current, indent=4
 
 
 ############################### Device ID's ###################################
-# PIR 'eb29412a460a068676g8cv'  # PIR Sensor 'eb5e5f786fffbf04b9ldxl' 
-DEVICELED_ID = 'eb29412a460a068676g8cv'
+# PIR 'eb29412a460a068676g8cv'  # PIR Sensor 'eb5e5f786fffbf04b9ldxl' PIR senser = eb0689ecbb2914fdcffopt
+DEVICELED_ID = 'eb0689ecbb2914fdcffopt'
 
 """# Switch Node
 DEVICESW_ID = '68635610e8db84fff7ea'
@@ -66,7 +66,7 @@ while True:
     print("tick")
     time.sleep(1.5 - ((time.time() - starttime) % 1.5))"""
 
-for i in response['result'][0:1]:
+for i in response['result'][1:2]:
     #name = i['name']
     #model = i['model']
     #print(name)

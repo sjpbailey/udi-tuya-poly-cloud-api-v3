@@ -46,6 +46,8 @@ class PirDNode(udi_interface.Node):
         DEVICESW_ID = self.DEVICESW_ID
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
+        time.sleep(2)
+        self.BtStat(self)
 
         response1 = openapi.get(
             "/v1.0/iot-03/devices/{}".format(DEVICESW_ID) + "/status/")
