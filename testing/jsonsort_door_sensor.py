@@ -32,7 +32,7 @@ response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
 # Save polling data sample
 # current = {'timestamp': time.time(), 'devices': response}
 response1 = json.dumps(response, indent=4)  # current, indent=4
-#print(response1)
+print(response1)
 
 # Writing to sample.json
 # with open("sample.json", "w") as outfile:
