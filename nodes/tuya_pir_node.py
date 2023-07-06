@@ -68,16 +68,33 @@ class PirNode(udi_interface.Node):
             elif i['value'] == 'none':
                 #LOGGER.info('PIR Normal {}'.format(i['value']))
                 self.setDriver('GV2', 0)
+                
+    def BtStat(self, command):
+        API_ENDPOINT = self.API_ENDPOINT
+        ACCESS_ID = self.ACCESS_ID
+        ACCESS_KEY = self.ACCESS_KEY
+        DEVICESW_ID = self.DEVICESW_ID
+        DEVICE_NAME = self.DEVICE_NAME
+        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
+        openapi.connect()
+        response1 = openapi.get(
+            "/v1.0/iot-03/devices/{}".format(DEVICESW_ID) + "/status/")
+        LOGGER.info(DEVICE_NAME)
+        LOGGER.info(response1)
+        for i in response1['result'][1:2]:
+            LOGGER.info(i['value'])
+            self.setDriver('GV3', i['value'])
 
     def poll(self, polltype):
         if 'longPoll' in polltype:
+            self.query(self)
             LOGGER.debug('longPoll (node)')
         else:
             self.SwStat(self)
             LOGGER.debug('shortPoll (node)')
 
     def query(self, command=None):
-        self.SwStat(self)
+        self.BtStat(self)
         self.reportDrivers()
 
     drivers = [
