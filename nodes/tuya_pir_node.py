@@ -88,7 +88,7 @@ class PirNode(udi_interface.Node):
 
     def poll(self, polltype):
         if 'longPoll' in polltype:
-            self.query(self)
+            #self.query(self)
             LOGGER.debug('longPoll (node)')
         else:
             self.SwStat(self)
