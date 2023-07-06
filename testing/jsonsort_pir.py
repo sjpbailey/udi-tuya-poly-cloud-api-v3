@@ -55,9 +55,17 @@ DEVICEPIR_ID = 'eb29412a460a068676g8cv'"""
 #openapi.connect()
 #openapi.post('/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
 response = openapi.get(
-            "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")  # DEVICE_ID
+            "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/[{'code': 'battery_percentage', 'value': True}]/")  # DEVICE_ID
+
+
+
+#response = openapi.get(
+#            "/v1.0/devices/{}".format(DEVICELED_ID) + "/logs/")  # DEVICE_ID
+
+
 #print(response1["colour_data_v2"])
 print(response)
+
 
 
 # do not run it just keeps going and going lol
@@ -66,11 +74,11 @@ while True:
     print("tick")
     time.sleep(1.5 - ((time.time() - starttime) % 1.5))"""
 
-for i in response['result'][1:2]:
+#for i in response['result']:#[1:2]:
     #name = i['name']
     #model = i['model']
     #print(name)
-    print(i['value'])
+#    print(i)#['value'])
     
 #### Statuses
 # response['result'][0:1] = {'code': 'pir', 'value': 'none'}, i["value"] = 'none'
