@@ -35,6 +35,7 @@ class PirNode(udi_interface.Node):
         self.apiEndpoint = apiEndpoint
         self.API_ENDPOINT = apiEndpoint
         self.name = name
+        self.DEVICE_NAME = name
         LOGGER.info(name)
         self.setDriver('ST', 1)
 
