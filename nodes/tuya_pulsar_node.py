@@ -37,6 +37,8 @@ class PullNode(udi_interface.Node):
         self.apiMq = apiMq
         self.API_MQ = apiMq
         self.setDriver('ST', 1)
+        self.setDriver('GV2', 0)
+        self.setDriver('GV3', 0)
 
     def logPulsarOn(self, command):
         API_ENDPOINT = self.API_ENDPOINT
@@ -53,9 +55,11 @@ class PullNode(udi_interface.Node):
         # Init openapi and connect
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
-
+        open_pulsar.add_message_listener(lambda msg: LOGGER.info(f"---\nexample receive: {msg}"))
+        open_pulsar.add_message_listener(lambda msg: json.dumps(print(str({msg}))))
         # Init Message Queue
         open_pulsar = TuyaOpenPulsar(ACCESS_ID, ACCESS_KEY, ACCESS_MQ, TuyaCloudPulsarTopic.PROD)
+        
         time.sleep(15)
         open_pulsar.start()
 
@@ -64,7 +68,7 @@ class PullNode(udi_interface.Node):
             LOGGER.debug('longPoll (node)')
         else:
             self.query(self)
-            self.SwStat(self)
+            #self.SwStat(self)
             LOGGER.debug('shortPoll (node)')
 
     def query(self, command=None):
