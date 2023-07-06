@@ -169,4 +169,37 @@ for i in response['result'][0:1]:
             model = i['model']
             print(model)
             product_name = i['product_name']
-            print(product_name)"""
+            print(product_name),
+        {
+            "active_time": 1688675193,
+            "biz_type": 0,
+            "category": "pir",
+            "create_time": 1688675193,
+            "icon": "smart/icon/ay1562583874631k02Aw/490e26f4b6e3bb27fc60e8e1ebc013ac.jpg",
+            "id": "eb0689ecbb2914fdcffopt",
+            "ip": "98.41.236.33",
+            "lat": "37.7200",
+            "local_key": "8.1*Fe*GBKYPVx?^",
+            "lon": "-121.4700",
+            "model": "CT60W_CBU_NL",
+            "name": "PIR new gate",
+            "online": true,
+            "owner_id": "33161067",
+            "product_id": "rp9akkjbohm7xdwe",
+            "product_name": "PIR senser",
+            "status": [
+                {
+                    "code": "pir",
+                    "value": "none"
+                },
+                {
+                    "code": "battery_percentage",
+                    "value": 100
+                }
+            ],
+            "sub": false,
+            "time_zone": "-07:00",
+            "uid": "az1610958067414WkfOO",
+            "update_time": 1688675255,
+            "uuid": "273734ea16f8e280"
+        },"""

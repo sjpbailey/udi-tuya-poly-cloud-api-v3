@@ -168,7 +168,7 @@ class TuyaController(udi_interface.Node):
             model = i['model']
             LOGGER.info(model)
             # "switch_1" in i['status'][0]['code']:
-            if i['model'] == "PIR-wifi-V01" or i['product_name'] == "PIR Sensor " or i['product_name'] == "PIR " or i['product_name'] == "PIR Motion Detector Alarm"or i['product_name'] == "PIR sensor":
+            if i['model'] == "PIR-wifi-V01" or i['product_name'] == "PIR Sensor " or i['product_name'] == "PIR " or i['product_name'] == "PIR Motion Detector Alarm"or i['product_name'] == "PIR senser":
                 LOGGER.info('Device Type')
                 LOGGER.info("PIR")
                 LOGGER.info('\n')
