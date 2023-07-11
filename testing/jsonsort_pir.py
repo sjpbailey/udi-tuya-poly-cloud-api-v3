@@ -84,6 +84,39 @@ while True:
 # response['result'][0:1] = {'code': 'pir', 'value': 'none'}, i["value"] = 'none'
 # response['result'][1:2] = {'code': 'battery_percentage', 'value': 100}, i['value']) = 100%
 
+#current errors FIX THESE PLEASE
+"""thread-5
+2023-07-08 00:46:24,020 Thread-5   udi_interface      ERROR    udi_interface:write: :
+2023-07-08 00:46:24,020 Thread-5   udi_interface      ERROR    udi_interface:write: Traceback (most recent call last):
+2023-07-08 00:46:24,020 Thread-5   udi_interface      ERROR    udi_interface:write: File "/usr/local/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+2023-07-08 00:46:24,020 Thread-5   udi_interface      ERROR    udi_interface:write: self.run()
+2023-07-08 00:46:24,020 Thread-5   udi_interface      ERROR    udi_interface:write: File "/usr/local/lib/python3.9/threading.py", line 917, in run
+2023-07-08 00:46:24,021 Thread-5   udi_interface      ERROR    udi_interface:write: self._target(*self._args, **self._kwargs)
+2023-07-08 00:46:24,021 Thread-5   udi_interface      ERROR    udi_interface:write: File "/var/polyglot/pg3/ns/0021b9026486_9/nodes/tuya_pirDoor_node.py", line 84, in poll
+2023-07-08 00:46:24,021 Thread-5   udi_interface      ERROR    udi_interface:write: self.SwStat(self)
+2023-07-08 00:46:24,021 Thread-5   udi_interface      ERROR    udi_interface:write: File "/var/polyglot/pg3/ns/0021b9026486_9/nodes/tuya_pirDoor_node.py", line 43, in SwStat
+2023-07-08 00:46:24,022 Thread-5   udi_interface      ERROR    udi_interface:write: API_ENDPOINT = self.API_ENDPOINT
+2023-07-08 00:46:24,022 Thread-5   udi_interface      ERROR    udi_interface:write: AttributeError
+2023-07-08 00:46:24,022 Thread-5   udi_interface      ERROR    udi_interface:write: :
+2023-07-08 00:46:24,022 Thread-5   udi_interface      ERROR    udi_interface:write: 'PirDNode' object has no attribute 'API_ENDPOINT'"""
+
+""" Thread-9
+2023-07-08 00:46:26,049 Thread-9   udi_interface      ERROR    udi_interface:write: :
+2023-07-08 00:46:26,049 Thread-9   udi_interface      ERROR    udi_interface:write: Traceback (most recent call last):
+2023-07-08 00:46:26,049 Thread-9   udi_interface      ERROR    udi_interface:write: File "/usr/local/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+2023-07-08 00:46:26,050 Thread-9   udi_interface      ERROR    udi_interface:write: self.run()
+2023-07-08 00:46:26,050 Thread-9   udi_interface      ERROR    udi_interface:write: File "/usr/local/lib/python3.9/threading.py", line 917, in run
+2023-07-08 00:46:26,050 Thread-9   udi_interface      ERROR    udi_interface:write: self._target(*self._args, **self._kwargs)
+2023-07-08 00:46:26,050 Thread-9   udi_interface      ERROR    udi_interface:write: File "/var/polyglot/pg3/ns/0021b9026486_9/nodes/tuya_pir_node.py", line 70, in poll
+2023-07-08 00:46:26,051 Thread-9   udi_interface      ERROR    udi_interface:write: self.SwStat(self)
+2023-07-08 00:46:26,051 Thread-9   udi_interface      ERROR    udi_interface:write: File "/var/polyglot/pg3/ns/0021b9026486_9/nodes/tuya_pir_node.py", line 43, in SwStat
+2023-07-08 00:46:26,051 Thread-9   udi_interface      ERROR    udi_interface:write: API_ENDPOINT = self.API_ENDPOINT
+2023-07-08 00:46:26,051 Thread-9   udi_interface      ERROR    udi_interface:write: AttributeError
+2023-07-08 00:46:26,051 Thread-9   udi_interface      ERROR    udi_interface:write: :
+2023-07-08 00:46:26,051 Thread-9   udi_interface      ERROR    udi_interface:write: 'PirNode' object has no attribute 'API_ENDPOINT'
+"""
+
+
 #### PIR
 """{
             "active_time": 1686981690,

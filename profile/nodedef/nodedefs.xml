@@ -13,6 +13,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+    
     <nodeDef id="lightv2" nls="lgtv2">
         <editors />
         <sts>
@@ -46,6 +47,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+    
     <nodeDef id="lightrgb" nls="lgtrgb">
         <editors />
         <sts>
@@ -94,6 +96,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+    
     <nodeDef id="lightv1" nls="lgtv1">
         <editors />
         <sts>
@@ -126,6 +129,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+
     <nodeDef id="switch" nls="swt">
         <editors />
         <sts>
@@ -141,21 +145,7 @@
             </accepts>
         </cmds>
     </nodeDef>
-    <nodeDef id="switch" nls="swt">
-        <editors />
-        <sts>
-            <st id="ST" editor="bool" />
-            <st id="GV2" editor="bool" />
-        </sts>
-        <cmds>
-            <sends />
-            <accepts>
-                <cmd id="SWTON" />
-                <cmd id="SWTOF" />
-                <cmd id="QUERY" />
-            </accepts>
-        </cmds>
-    </nodeDef>
+    
     <nodeDef id="switchdim" nls="swtdim">
         <editors />
         <sts>
@@ -181,6 +171,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+    
     <nodeDef id="relay" nls="rly">
         <editors />
         <sts>
@@ -205,6 +196,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+    
     <nodeDef id="pirm" nls="pir">
         <editors />
         <sts>
@@ -219,6 +211,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+    
     <nodeDef id="pirmd" nls="pir">
         <editors />
         <sts>
@@ -233,6 +226,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+    
     <nodeDef id="pulsa" nls="pula">
         <editors />
         <sts>
@@ -248,6 +242,7 @@
             </accepts>
         </cmds>
     </nodeDef>
+    
     <nodeDef id="robvac" nls="bot">
         <editors />
         <sts>
