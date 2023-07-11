@@ -208,6 +208,7 @@
             <sends />
             <accepts>
                 <cmd id="QUERY" />
+                <cmd id="POLLIT" />
             </accepts>
         </cmds>
     </nodeDef>

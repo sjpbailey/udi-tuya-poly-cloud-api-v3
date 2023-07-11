@@ -5,6 +5,7 @@ MIT License
 Version 3.0.1 Jun 2023
 """
 import asyncio
+from select import POLLIN
 import udi_interface
 import time
 import json
@@ -24,6 +25,8 @@ class PirNode(udi_interface.Node):
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address, name)
         self.poly.subscribe(self.poly.START, self.start, address)
+        if pollit is True:
+            self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
         self.new_id = new_id
         self.deviceid = deviceid
@@ -43,17 +46,9 @@ class PirNode(udi_interface.Node):
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
-        #LOGGER.info('API_ENDPOINT')
-        #LOGGER.info(API_ENDPOINT)
         ACCESS_ID = self.ACCESS_ID
-        #LOGGER.info('ACCESS_ID')
-        #LOGGER.info(ACCESS_ID)
         ACCESS_KEY = self.ACCESS_KEY
-        #LOGGER.info('ACCESS_KEY')
-        #LOGGER.info(ACCESS_KEY)
         DEVICESW_ID = self.DEVICESW_ID
-        #LOGGER.info('DEVICESW_ID')
-        #LOGGER.info(DEVICESW_ID)
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
 
@@ -85,7 +80,7 @@ class PirNode(udi_interface.Node):
             LOGGER.info(i['value'])
             self.setDriver('GV3', i['value'])
 
-    def poll(self, polltype):
+    def gopol(self, polltype):
         if 'longPoll' in polltype:
             #self.query(self)
             LOGGER.debug('longPoll (node)')
@@ -106,5 +101,6 @@ class PirNode(udi_interface.Node):
     id = 'pirm'
 
     commands = {
-        'QUERY': query
+        'QUERY': query,
+        'POLLIT': gopol,
     }
