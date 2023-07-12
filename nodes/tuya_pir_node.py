@@ -101,5 +101,5 @@ class PirNode(udi_interface.Node):
 
     commands = {
         'QUERY': query,
-        'POLLIT': gopol,
+        #'POLLIT': gopol,
     }
