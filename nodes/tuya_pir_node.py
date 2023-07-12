@@ -79,7 +79,7 @@ class PirNode(udi_interface.Node):
             LOGGER.info(i['value'])
             self.setDriver('GV3', i['value'])
 
-    def gopol(self, polltype):
+    def poll(self, polltype):
         if 'longPoll' in polltype:
             #self.query(self)
             LOGGER.debug('longPoll (node)')
