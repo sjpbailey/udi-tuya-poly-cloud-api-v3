@@ -25,8 +25,7 @@ class PirNode(udi_interface.Node):
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address, name)
         self.poly.subscribe(self.poly.START, self.start, address)
-        if pollit is True:
-            self.poly.subscribe(self.poly.START, self.start, address)
+        self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
         self.new_id = new_id
         self.deviceid = deviceid
