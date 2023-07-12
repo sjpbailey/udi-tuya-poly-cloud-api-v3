@@ -47,51 +47,28 @@ class PullNode(udi_interface.Node):
         DEVICESW_ID = self.DEVICESW_ID
         ACCESS_MQ = self.API_MQ
         LOGGER.info(ACCESS_MQ)
-        
+        if ACCESS_MQ is not None:
+            self.setDriver('GV2', 1)
         # Enable debug log
         TUYA_LOGGER.setLevel(logging.DEBUG)
 
         # Init openapi and connect
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
-
-        #LOGGER.info("GV2")
-        #if "GV2" == 0 and "GV3" == 0:
-        #LOGGER.info("Pulsar Running")
-        #time.sleep(1)
+        open_pulsar.add_message_listener(lambda msg: LOGGER.info(f"---\nexample receive: {msg}"))
+        open_pulsar.add_message_listener(lambda msg: json.dumps(print(str({msg}))))
         # Init Message Queue
         open_pulsar = TuyaOpenPulsar(ACCESS_ID, ACCESS_KEY, ACCESS_MQ, TuyaCloudPulsarTopic.PROD)
-        # Add Message Queue listener
-        open_pulsar.add_message_listener(lambda msg: LOGGER.info(f"---\nData received: {msg}"))
-        #open_pulsar.add_message_listener(lambda msg: json.dumps(LOGGER.info(str({msg}))))
         
-        ivr_one = 'percent'
-        percent = int(command.get('value'))
-
-        def set_percent(self, command):
-            percent = int(command.get('value'))
-        if percent < 1 or percent > 9999:
-            LOGGER.error('Invalid Level {}'.format(percent))
-        else:
-            self.setDriver('GV4', int(percent))
-            LOGGER.info('Scanner Time = ' + str(percent) + ' Level')
-            
+        time.sleep(15)
         open_pulsar.start()
-        self.setDriver('GV2', 1)
-        self.setDriver('GV3', 0)
-        LOGGER.info("Pulsar Start")
-        time.sleep(percent)
-        LOGGER.info(int(percent)) 
-        open_pulsar.stop()
-        self.setDriver('GV2', 0)
-        self.setDriver('GV3', 1)
-        LOGGER.info("Pulsar Stop")
 
     def poll(self, polltype):
         if 'longPoll' in polltype:
             LOGGER.debug('longPoll (node)')
         else:
-            pass
+            self.query(self)
+            #self.SwStat(self)
             LOGGER.debug('shortPoll (node)')
 
     def query(self, command=None):
@@ -100,14 +77,12 @@ class PullNode(udi_interface.Node):
     drivers = [
         {'driver': 'ST', 'value': 0, 'uom': 2},
         {'driver': 'GV2', 'value': 0, 'uom': 2},
-        {'driver': 'GV3', 'value': 0, 'uom': 2},
-        {'driver': 'GV4', 'value': 0, 'uom': 57},
+        #{'driver': 'GV3', 'value': 0, 'uom': 51},
     ]
 
     id = 'pulsa'
 
     commands = {
         'SWTON': logPulsarOn,
-        'STLVL': logPulsarOn,
         'QUERY': query
     }
