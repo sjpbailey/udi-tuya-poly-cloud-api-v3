@@ -183,12 +183,8 @@ class TuyaController(udi_interface.Node):
                 node = tuya_pirDoor_node.PirDNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
-                self.wait_for_node_done()
-            else:
-                LOGGER.info("OTHER DEVICE")
-            time.sleep(.5)
-            
-            """if i['model'] == "SS01S(\u4e0d\u5206\u8d1f\u8f7d)\u4e50\u946b" or i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)" or i['model'] == "SS01S\uff08\u706b\u7ebf\u8d1f\u8f7d\u7ebf\u4e0d\u5206\u7248\u672c\uff09BK\u7248\u672c":
+                self.wait_for_node_done()            
+            elif i['model'] == "SS01S(\u4e0d\u5206\u8d1f\u8f7d)\u4e50\u946b" or i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)" or i['model'] == "SS01S\uff08\u706b\u7ebf\u8d1f\u8f7d\u7ebf\u4e0d\u5206\u7248\u672c\uff09BK\u7248\u672c":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
                 LOGGER.info('\n')
@@ -212,7 +208,6 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            
             elif i['product_name'] == "120V A19 9W SMART BULB":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2")
@@ -237,11 +232,6 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            else:
-                LOGGER.info("OTHER DEVICE")
-            #self.pulsar()"""
-                    
-            """
             elif i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
@@ -275,7 +265,7 @@ class TuyaController(udi_interface.Node):
                 self.poly.addNode(node)
                 self.wait_for_node_done()
             else:
-                LOGGER.info("OTHER DEVICE")"""
+                LOGGER.info("OTHER DEVICE")
         #time.sleep(.5)
         #self.pulsar()
         
