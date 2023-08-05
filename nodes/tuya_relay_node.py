@@ -198,11 +198,11 @@ class RelayNode(udi_interface.Node):
         self.reportDrivers()
 
     drivers = [
-        {'driver': 'ST', 'value': 0, 'uom': 2},
-        {'driver': 'GV2', 'value': 0, 'uom': 2},
-        {'driver': 'GV3', 'value': 0, 'uom': 2},
-        {'driver': 'GV4', 'value': 0, 'uom': 2},
-        {'driver': 'GV5', 'value': 0, 'uom': 2},
+        {'driver': 'ST', 'value': 0, 'uom': 2, 'name': 'Online'},
+        {'driver': 'GV2', 'value': 0, 'uom': 2, 'name': 'Switch 1 Status'},
+        {'driver': 'GV3', 'value': 0, 'uom': 2, 'name': 'Switch 2 Status'},
+        {'driver': 'GV4', 'value': 0, 'uom': 2, 'name': 'Switch 3 Status'},
+        {'driver': 'GV5', 'value': 0, 'uom': 2, 'name': 'Switch 4 Status'},
     ]
 
     id = 'relay'
