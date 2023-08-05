@@ -356,7 +356,6 @@ class LightNode(udi_interface.Node):
             def set_r(self, command):
                 rout = int(command.get('value')*1)
         
-   
         
         # Set Color
         for i in current_colour:
@@ -426,14 +425,14 @@ class LightNode(udi_interface.Node):
         self.reportDrivers()
 
     drivers = [
-        {'driver': 'ST', 'value': 1, 'uom': 2},
-        {'driver': 'GV2', 'value': 0, 'uom': 2},
-        {'driver': 'GV3', 'value': 0, 'uom': 51},
-        {'driver': 'GV4', 'value': 0, 'uom': 25},
-        {'driver': 'GV5', 'value': 0, 'uom': 25},
-        {'driver': 'GV6', 'value': 0, 'uom': 100},
-        {'driver': 'GV7', 'value': 0, 'uom': 100},
-        {'driver': 'GV8', 'value': 0, 'uom': 100},
+        {'driver': 'ST', 'value': 1, 'uom': 2, 'name': 'Online'},
+        {'driver': 'GV2', 'value': 0, 'uom': 2, 'name': 'Switch Status'},
+        {'driver': 'GV3', 'value': 0, 'uom': 51, 'name': 'Light Level'},
+        {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Light Command'},
+        {'driver': 'GV5', 'value': 0, 'uom': 25, 'name': 'Light Colour'},
+        {'driver': 'GV6', 'value': 0, 'uom': 100, 'name': 'R'},
+        {'driver': 'GV7', 'value': 0, 'uom': 100, 'name': 'G'},
+        {'driver': 'GV8', 'value': 0, 'uom': 100, 'name': 'B'},
 
     ]
 
