@@ -91,8 +91,8 @@ class SwitchNode(udi_interface.Node):
         self.reportDrivers()
 
     drivers = [
-        {'driver': 'ST', 'value': 0, 'uom': 2},
-        {'driver': 'GV2', 'value': 0, 'uom': 2},
+        {'driver': 'ST', 'value': 0, 'uom': 2, 'name': 'Online'},
+        {'driver': 'GV2', 'value': 0, 'uom': 2, 'name': 'Switch Status'},
     ]
 
     id = 'switch'
