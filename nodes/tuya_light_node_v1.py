@@ -334,11 +334,11 @@ class LightNode(udi_interface.Node):
         self.reportDrivers()
 
     drivers = [
-        {'driver': 'ST', 'value': 1, 'uom': 2},
-        {'driver': 'GV2', 'value': 0, 'uom': 2},
-        {'driver': 'GV3', 'value': 0, 'uom': 51},
-        {'driver': 'GV4', 'value': 0, 'uom': 25},
-        {'driver': 'GV5', 'value': 0, 'uom': 25},
+        {'driver': 'ST', 'value': 1, 'uom': 2, 'name': 'Online'},
+        {'driver': 'GV2', 'value': 0, 'uom': 2, 'name': 'Switch Status'},
+        {'driver': 'GV3', 'value': 0, 'uom': 51, 'name': 'Light Level'},
+        {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Light Mode'},
+        {'driver': 'GV5', 'value': 0, 'uom': 25, 'name': 'Light Colour'},
 
     ]
 
