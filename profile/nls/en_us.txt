@@ -135,8 +135,8 @@ CMD-swtdim-QUERY-NAME = Query
 MODESW-0 = halogen
 MODESW-1 = incandescent
 
-# Relay
-ND-relay-NAME = Relay 
+# Relay_4
+ND-relay-NAME = Relay_4 
 ND-relay-ICON = Switch
 ST-rly-GV2-NAME = Relay 1 Status
 ST-rly-GV3-NAME = Relay 2 Status
@@ -151,6 +151,21 @@ CMD-rly-SWTON3-NAME = Switch 3 On
 CMD-rly-SWTOF3-NAME = Switch 3 Off
 CMD-rly-SWTON4-NAME = Switch 4 On
 CMD-rly-SWTOF4-NAME = Switch 4 Off
+CMD-rly-QUERY-NAME = Query
+
+# Relay_3
+ND-relay3-NAME = Relay_3 
+ND-relay3-ICON = Switch
+ST-rly3-GV2-NAME = Relay 1 Status
+ST-rly3-GV3-NAME = Relay 2 Status
+ST-rly3-GV4-NAME = Relay 3 Status
+ST-rly3-ST-NAME = Node Status
+CMD-rly3-SWTON1-NAME = Switch 1 On
+CMD-rly3-SWTOF1-NAME = Switch 1 Off
+CMD-rly3-SWTON2-NAME = Switch 2 On
+CMD-rly3-SWTOF2-NAME = Switch 2 Off
+CMD-rly3-SWTON3-NAME = Switch 3 On
+CMD-rly3-SWTOF3-NAME = Switch 3 Off
 CMD-rly-QUERY-NAME = Query
 
 # PIR

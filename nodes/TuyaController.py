@@ -18,6 +18,7 @@ from nodes import tuya_pulsar_node
 from nodes import tuya_pir_node
 from nodes import tuya_pirDoor_node
 from nodes import tuya_relay_node
+from nodes import tuya_relay_node_3
 from nodes import tuya_switch_node
 from nodes import tuya_switch_dimmer_node
 from nodes import tuya_light_node
@@ -232,7 +233,15 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)":
+            elif i['model'] == "AHR-085" or i['product_id'] == "pxi0drurxccaahyr":
+                LOGGER.info('Device Type')
+                LOGGER.info("Relay3")
+                LOGGER.info('\n')
+                node = tuya_relay_node_3.RelayNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
+            elif i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)" or i['product_name'] == "Mini Smart Plug" or i['product_id'] == "0g1fmqh6d5io7lcn":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
                 LOGGER.info('\n')
@@ -240,7 +249,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "SS01S\uff08\u706b\u7ebf\u8d1f\u8f7d\u7ebf\u4e0d\u5206\u7248\u672c\uff09BK\u7248\u672c":
+            elif i['model'] == "SS01S\uff08\u706b\u7ebf\u8d1f\u8f7d\u7ebf\u4e0d\u5206\u7248\u672c\uff09BK\u7248\u672c" or i['model'] == "SP10" or i['product_name'] == "Smart Socket":
                 LOGGER.info('Device Type')
                 LOGGER.info("SWITCH")
                 LOGGER.info('\n')
