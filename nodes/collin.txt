@@ -1,0 +1,13 @@
+4 x TREATLIFE Smart Light Bulbs (On/Off, Color Temperature but On/Off is most important. I think the color temperature will stay the same if I set it in the app.)
+1 x Homesupplier Smart Curtain System (Open/Close commands)
+1 x AHR-085 AHRISE WiFi Surge Protector with 3 controlled electrical outlets (On/Off commands)
+4 x Gosund Mini Wifi Outlet Smart Plugs (On/Off commands)
+1 x GeekAire Smart Fan (On/Off, Speeds 1-4, Oscillate Left/Right/Up/Down commands but On/Off is most important.)
+
+bulb color Modes
+2700K Soft White
+3000K Warm White
+3500K Natural White
+4000K Daylight
+5000K Natural Daylight
+6500K Cool White
