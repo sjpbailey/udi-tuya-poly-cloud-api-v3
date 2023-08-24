@@ -24,6 +24,7 @@ from nodes import tuya_switch_dimmer_node
 from nodes import tuya_light_node
 from nodes import tuya_light_node_rgb
 from nodes import tuya_light_node_v1
+from nodes import tuya_light_SL20_white
 
 LOGGER = udi_interface.LOGGER
 Custom = udi_interface.Custom
@@ -169,7 +170,7 @@ class TuyaController(udi_interface.Node):
             model = i['model']
             LOGGER.info(model)
             # "switch_1" in i['status'][0]['code']:
-            if i['model'] == "PIR-wifi-V01" or i['product_name'] == "PIR Sensor " or i['product_name'] == "PIR " or i['product_name'] == "PIR Motion Detector Alarm" or i['product_name'] == "PIR senser":
+            """if i['model'] == "PIR-wifi-V01" or i['product_name'] == "PIR Sensor " or i['product_name'] == "PIR " or i['product_name'] == "PIR Motion Detector Alarm" or i['product_name'] == "PIR senser":
                 LOGGER.info('Device Type')
                 LOGGER.info("PIR")
                 LOGGER.info('\n')
@@ -270,6 +271,14 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info("Robot Vacuum")
                 LOGGER.info('\n')
                 node = tuya_robotvac_node.RobvacNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
+                self.poly.addNode(node)
+                self.wait_for_node_done()"""
+            if i['product_name'] == "Smart Bulb-SL20":
+                LOGGER.info('Device Type')
+                LOGGER.info("LED-V2")
+                LOGGER.info('\n')
+                node = tuya_light_SL20_white(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
