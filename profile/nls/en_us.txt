@@ -76,7 +76,7 @@ ST-curt-GV3-NAME = Curtain Level
 ST-curt-GV4-NAME = Curtain Mode
 
 CMD-curt-STLVL-NAME = Curtain Percent
-CMD-curt-MODEW-NAME = Curtain Command
+CMD-curt-MODECUR-NAME = Curtain Command
 
 # Curtain Modes
 MODECUR-0 = Stop
