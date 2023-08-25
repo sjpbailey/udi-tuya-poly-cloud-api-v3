@@ -98,9 +98,7 @@
         <cmds>
             <sends />
             <accepts>
-                <cmd id="LGTON" />
-                <cmd id="LGTOF" />
-
+                
                 <cmd id="STLVL">
                     <p id="" editor="LEVEL" init="GV3" />
                 </cmd>
