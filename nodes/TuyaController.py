@@ -279,7 +279,7 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2-White")
                 LOGGER.info('\n')
-                node = tuya_light_SL20_white(
+                node = tuya_light_SL20_white.LightNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
@@ -287,7 +287,7 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info('Device Type')
                 LOGGER.info("Air Circulator")
                 LOGGER.info('\n')
-                node = tuya_air_circulator(
+                node = tuya_air_circulator.AirCirNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
