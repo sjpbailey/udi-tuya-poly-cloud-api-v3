@@ -104,16 +104,14 @@ class LightNode(udi_interface.Node):
             LOGGER.info('White Colour')
             time.sleep(.1)
             self.SwStat(self)
-        else:
-            pass
-        ### Future
-        """# Music
         elif self.modeOn == 2:
             commands = {'commands': [{'code': 'work_mode', 'value': 'music'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICELED_ID), commands)
             time.sleep(.5)
-            self.SwStat(self)"""
+            self.SwStat(self)
+        else:
+            pass
         
 
     """# Set Color

@@ -11,3 +11,30 @@ bulb color Modes
 4000K Daylight
 5000K Natural Daylight
 6500K Cool White
+
+
+Steve,
+
+I haven't been to Bend, Oregon for years. Who are you going to see?
+
+Here are the settings for the Smart Bulb-LED SL20. The Amazon listing shows 6 settings, 
+but the SmartLife app and Alexa only show 4 and each app gives different values so I am going to make a choice.
+
+temp_value_v2 = 0         (Warm White)
+temp_value_v2 = 333     (Soft White)
+temp_value_v2 = 667     (Daylight)
+temp_value_v2 = 1000  (Cool White)
+
+When I tested these values in the Tuya Debug Device the bulbs would not change temperature. 
+I also noticed that the brightness would not change either. However, the on-and-off works flawlessly.
+
+
+Here are the settings for the air circulator. 
+By the way, switch_vertical only works with the remote and SmartLife app and has never worked with Alexa. 
+I just tested it with the Tuya Debug Device and it doesn't work there either, however, everything else worked fine. 
+It would be nice to get that working but it may be a manufacturing issue out of our control.
+
+Here are the settings for the curtain system. By the way, 
+I have tested all of the commands and they all work fine except for stop. 
+It actually just pauses for a split second and then resumes the initial command 
+but it's not an issue because I've never used the stop command until today.
