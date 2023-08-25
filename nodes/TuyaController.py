@@ -275,7 +275,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()"""
-            if i['product_name'] == "Smart Bulb-SL20":
+            if 'ST' == True:   #i['product_name'] == "Smart Bulb-SL20":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2-White")
                 LOGGER.info('\n')
@@ -283,7 +283,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "AF1S" or i['product_name'] == "Air circulator":
+            elif 'ST' == True:   #i['model'] == "AF1S" or i['product_name'] == "Air circulator":
                 LOGGER.info('Device Type')
                 LOGGER.info("Air Circulator")
                 LOGGER.info('\n')
