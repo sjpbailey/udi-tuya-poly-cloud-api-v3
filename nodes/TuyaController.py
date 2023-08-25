@@ -25,6 +25,7 @@ from nodes import tuya_light_node
 from nodes import tuya_light_node_rgb
 from nodes import tuya_light_node_v1
 from nodes import tuya_light_SL20_white
+from nodes import tuya_air_circulator
 
 LOGGER = udi_interface.LOGGER
 Custom = udi_interface.Custom
@@ -276,12 +277,21 @@ class TuyaController(udi_interface.Node):
                 self.wait_for_node_done()"""
             if i['product_name'] == "Smart Bulb-SL20":
                 LOGGER.info('Device Type')
-                LOGGER.info("LED-V2")
+                LOGGER.info("LED-V2-White")
                 LOGGER.info('\n')
                 node = tuya_light_SL20_white(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
+            elif i['model'] == "AF1S" or i['product_name'] == "Air circulator":
+                LOGGER.info('Device Type')
+                LOGGER.info("Air Circulator")
+                LOGGER.info('\n')
+                node = tuya_air_circulator(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
+            
             else:
                 LOGGER.info("OTHER DEVICE")
         #time.sleep(.5)

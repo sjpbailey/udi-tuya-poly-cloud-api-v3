@@ -31,8 +31,8 @@ MODEW-2 = Music
 MODEW-3 = White
 
 # Air Circulator productId km8pesogga58btnk
-ND-aircir-NAME = Light Node SL20
-ND-aircir-ICON = LampAndSwitch
+ND-aircir-NAME = Air Circulator
+ND-aircir-ICON = Thermostat
 ST-airc-ST-NAME = Node Status
 ST-airc-GV2-NAME = Fan Status
 ST-airc-GV3-NAME = Horizontal
