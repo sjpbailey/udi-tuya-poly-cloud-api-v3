@@ -276,7 +276,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()"""
-            if i['model'] == "SL10" or i['product_name'] == "Merkury BW904 Smart Bulb":   #i['product_name'] == "Smart Bulb-SL20":
+            if i['product_name'] == "Smart Bulb-SL20":
                 LOGGER.info('Device Type')
                 LOGGER.info("LED-V2-White")
                 LOGGER.info('\n')
@@ -284,7 +284,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "PIR-wifi-V01":  #i['model'] == "AF1S" or i['product_name'] == "Air circulator":
+            elif i['model'] == "AF1S" or i['product_name'] == "Air circulator":
                 LOGGER.info('Device Type')
                 LOGGER.info("Air Circulator")
                 LOGGER.info('\n')
@@ -292,7 +292,14 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            
+            elif i['model'] == "PIR-wifi-V01":  #i['model'] == "HC700TY" or i['product_name'] == "CURTAIN SYSTEM":
+                LOGGER.info('Device Type')
+                LOGGER.info("Curtain")
+                LOGGER.info('\n')
+                node = tuya_curtain_node.CurtainNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
             else:
                 LOGGER.info("OTHER DEVICE")
         #time.sleep(.5)
