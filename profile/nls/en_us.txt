@@ -5,6 +5,30 @@ ST-tuyanls-ST-NAME = Tuya NodeServer Running
 CMD-tuyanls-REMOVE_NOTICES_ALL-NAME = Remove Notices
 CMD-tuyanls-DISCOVER-NAME = Query
 
+# LightNodeV2 Smart Bulb-SL20
+ND-lightsl20-NAME = Light Node SL20
+ND-lightsl20-ICON = LampAndSwitch
+ST-lgtsl20-ST-NAME = Node Status
+ST-lgtsl20-GV2-NAME = Light Status
+ST-lgtsl20-GV3-NAME = Light Level
+ST-lgtsl20-GV4-NAME = Light Mode Command
+ST-lgtsl20-GV5-NAME = Light Temp Command
+#ST-lgtsl20-GV5-NAME = Light Colour
+#ST-lgtsl20-GV6-NAME = Light Scene
+#ST-lgtsl20-GV7-NAME = Light Music
+#ST-lgtsl20-GV8-NAME = Light White
+
+CMD-lgtsl20-LGTON-NAME = Light On
+CMD-lgtsl20-LGTOF-NAME = Light Off
+CMD-lgtsl20-STTMP-NAME = Light Temp
+CMD-lgtsl20-STLVL-NAME = Level White
+CMD-lgtsl20-MODEW-NAME = Command
+
+
+
+
+
+
 # Pulsar
 ND-pulsa-NAME = Pulse 
 ND-pulsa-ICON = Electricity
@@ -55,27 +79,6 @@ CMD-lgtv2-LGTCL-NAME = Light Color
 CMD-lgtv2-STLVL-NAME = Level White
 CMD-lgtv2-MODE-NAME = Command
 
-
-# LightNodeV2 Smart Bulb-SL20
-ND-lightsl20-NAME = Light Node SL20
-ND-lightsl20-ICON = LampAndSwitch
-ST-lgtsl20-ST-NAME = Node Status
-ST-lgtsl20-GV2-NAME = Light Status
-ST-lgtsl20-GV3-NAME = Light Level
-ST-lgtsl20-GV4-NAME = Light Mode Command
-#ST-lgtsl20-GV5-NAME = Light Color Command
-#ST-lgtsl20-GV5-NAME = Light Colour
-#ST-lgtsl20-GV6-NAME = Light Scene
-#ST-lgtsl20-GV7-NAME = Light Music
-#ST-lgtsl20-GV8-NAME = Light White
-
-CMD-lgtsl20-LGTON-NAME = Light On
-CMD-lgtsl20-LGTOF-NAME = Light Off
-#CMD-lgtsl20-LGTCL-NAME = Light Color
-CMD-lgtsl20-STLVL-NAME = Level White
-CMD-lgtsl20-MODE-NAME = Command
-
-
 # LightNodeRGB
 ND-lightrgb-NAME = Light Node V2
 ND-lightrgb-ICON = LampAndSwitch
@@ -104,6 +107,13 @@ CMD-lgtrgb-MODE-NAME = Command
 MODE-0 = Colour
 MODE-1 = Scene
 MODE-2 = Music
+
+
+# LED Modes
+MODEW-0 = Colour
+MODEW-1 = Scene
+MODEW-2 = Music
+MODEW-3 = White
 
 # LED Color
 MODECL-0 = Red High
