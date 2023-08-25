@@ -50,9 +50,10 @@ DEVICEPIR_ID = 'eb29412a460a068676g8cv'"""
 
 
 response1 = openapi.get(
-    "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")  # DEVICE_ID
-for i in response1['result'][3:4]:
-    print(i['value'])
+    "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/online/")  # DEVICE_ID
+print(response1)
+for i in response1:#['result']:
+    print(i)
     #if i['value'] == True:
     #    print('gotya')
 
