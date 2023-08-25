@@ -187,13 +187,13 @@ class RelayNode(udi_interface.Node):
                 self.setDriver('GV5', 0)
             pass
         # Device Online
-        for i in response1['result']:
+        """for i in response1['result']:
             if i['online'] == True:
                 self.setDriver('ST', 1)
             if i['online'] == False:
                 self.setDriver('ST', 0)
             else:
-                pass
+                pass"""
 
     def poll(self, polltype):
         if 'longPoll' in polltype:
