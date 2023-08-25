@@ -292,7 +292,7 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "PIR-wifi-V01":  #i['model'] == "HC700TY" or i['product_name'] == "CURTAIN SYSTEM":
+            elif i['model'] == "HC700TY" or i['product_name'] == "CURTAIN SYSTEM":
                 LOGGER.info('Device Type')
                 LOGGER.info("Curtain")
                 LOGGER.info('\n')
