@@ -39,6 +39,9 @@
     <editor id="MODESP">
         <range uom="25" subset="0-3" nls="MODESP" />
     </editor>
+    <editor id="MODECUR">
+        <range uom="25" subset="0-2" nls="MODECUR" />
+    </editor>
     <editor id="MODEHOR">
         <range uom="25" subset="0-1" nls="MODEHOR" />
     </editor>

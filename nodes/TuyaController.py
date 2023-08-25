@@ -26,6 +26,7 @@ from nodes import tuya_light_node_rgb
 from nodes import tuya_light_node_v1
 from nodes import tuya_light_SL20_white
 from nodes import tuya_air_circulator
+from nodes import tuya_curtain_node
 
 LOGGER = udi_interface.LOGGER
 Custom = udi_interface.Custom

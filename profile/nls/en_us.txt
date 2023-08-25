@@ -67,7 +67,21 @@ MODEHOR-1 = False
 MODEVRT-0 = True
 MODEVRT-1 = False
 
+# Curtain
+ND-curtain-NAME = Curtain
+ND-curtain-ICON = LampAndSwitch
+ST-curt-ST-NAME = Node Status
+ST-curt-GV2-NAME = Curtain Status
+ST-curt-GV3-NAME = Curtain Level
+ST-curt-GV4-NAME = Curtain Mode
 
+CMD-curt-STLVL-NAME = Curtain Percent
+CMD-curt-MODEW-NAME = Curtain Command
+
+# Curtain Modes
+MODECUR-0 = Stop
+MODECUR-1 = Open
+MODECUR-2 = Close
 
 
 
