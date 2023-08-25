@@ -300,6 +300,14 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
+            elif i['model'] == "TY-DIY-S04":
+                LOGGER.info('Device Type')
+                LOGGER.info("Relay")
+                LOGGER.info('\n')
+                node = tuya_relay_node.RelayNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
             else:
                 LOGGER.info("OTHER DEVICE")
         #time.sleep(.5)

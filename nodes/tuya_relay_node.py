@@ -30,7 +30,6 @@ class RelayNode(udi_interface.Node):
         self.apiEndpoint = apiEndpoint
         self.API_ENDPOINT = apiEndpoint
         self.SwStat(self)
-        self.setDriver('ST', 1)
 
     def setSwOn1(self, command):
         API_ENDPOINT = self.API_ENDPOINT
@@ -155,7 +154,7 @@ class RelayNode(udi_interface.Node):
         response1 = openapi.get(
             "/v1.0/iot-03/devices/{}".format(DEVICESW_ID) + "/status/")  # DEVICE_ID
         LOGGER.info(response1)
-
+        # Relay 1 Status
         for i in response1['result'][0:1]:
             LOGGER.info(i['value'])
             if i['value'] == True:
@@ -163,6 +162,7 @@ class RelayNode(udi_interface.Node):
             elif i['value'] == False:
                 self.setDriver('GV2', 0)
             pass
+        # Relay 2 Status
         for i in response1['result'][1:2]:
             LOGGER.info(i['value'])
             if i['value'] == True:
@@ -170,6 +170,7 @@ class RelayNode(udi_interface.Node):
             elif i['value'] == False:
                 self.setDriver('GV3', 0)
             pass
+        # Relay 3 Status
         for i in response1['result'][2:3]:
             LOGGER.info(i['value'])
             if i['value'] == True:
@@ -177,6 +178,7 @@ class RelayNode(udi_interface.Node):
             elif i['value'] == False:
                 self.setDriver('GV4', 0)
             pass
+        # Relay 4 Status
         for i in response1['result'][3:4]:
             LOGGER.info(i['value'])
             if i['value'] == True:
@@ -184,6 +186,14 @@ class RelayNode(udi_interface.Node):
             elif i['value'] == False:
                 self.setDriver('GV5', 0)
             pass
+        # Device Online
+        for i in response1['result']:
+            if i['online'] == True:
+                self.setDriver('ST', 1)
+            if i['online'] == False:
+                self.setDriver('ST', 0)
+            else:
+                pass
 
     def poll(self, polltype):
         if 'longPoll' in polltype:

@@ -112,6 +112,31 @@
         </cmds>
     </nodeDef>
 
+    <nodeDef id="relay" nls="rly">
+        <editors />
+        <sts>
+            <st id="GV2" editor="bool" />
+            <st id="GV3" editor="bool" />
+            <st id="GV4" editor="bool" />
+            <st id="GV5" editor="bool" />
+            <st id="ST" editor="bool" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="SWTON1" />
+                <cmd id="SWTOF1" />
+                <cmd id="SWTON2" />
+                <cmd id="SWTOF2" />
+                <cmd id="SWTON3" />
+                <cmd id="SWTOF3" />
+                <cmd id="SWTON4" />
+                <cmd id="SWTOF4" />
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+
 
     <!--nodeDef id="lightv2" nls="lgtv2">
         <editors />
