@@ -9,6 +9,7 @@ import colorsys
 import udi_interface
 import time
 import json
+import logging
 from tuya_bulb_control import Bulb
 from tuya_connector import (
     TuyaOpenAPI,)
@@ -70,7 +71,6 @@ class AirCirNode(udi_interface.Node):
         time.sleep(.1)
         self.SwStat(self)
 
-
     # Set Modes
     def modeOn(self, command):
         API_ENDPOINT = self.API_ENDPOINT
@@ -81,7 +81,7 @@ class AirCirNode(udi_interface.Node):
         openapi.connect()
         self.modeOn = int(command.get('value'))
         self.setDriver('GV4', self.modeOn)
-        # Colour
+        # Fresh
         if self.modeOn == 0:
             commands = {'commands': [{'code': 'mode', 'value': 'fresh'}]}
             openapi.post(
@@ -89,26 +89,30 @@ class AirCirNode(udi_interface.Node):
             LOGGER.info('Colour')
             time.sleep(.1)
             self.SwStat(self)
-        else:
-            pass
-        # Scene
-        """elif self.modeOn == 1:
-            commands = {'commands': [{'code': 'work_mode', 'value': 'scene'}]}
+        # nature
+        elif self.modeOn == 1:
+            commands = {'commands': [{'code': 'mode', 'value': 'nature'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEAIR_ID), commands)
             LOGGER.info('Scene')
             time.sleep(.1)
             self.SwStat(self)
-        
-        ### Future
-        # Music
+        # Sleep
         elif self.modeOn == 2:
-            commands = {'commands': [{'code': 'work_mode', 'value': 'music'}]}
+            commands = {'commands': [{'code': 'mode', 'value': 'sleep'}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEAIR_ID), commands)
             time.sleep(.5)
-            self.SwStat(self)"""
-        
+            self.SwStat(self)
+        # Smart
+        elif self.modeOn == 3:
+            commands = {'commands': [{'code': 'mode', 'value': 'smart'}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICEAIR_ID), commands)
+            time.sleep(.5)
+            self.SwStat(self)
+        else:
+            pass
 
     # Set Fan
     def setFan(self, command):
@@ -164,30 +168,65 @@ class AirCirNode(udi_interface.Node):
         else:
             pass
 
-    """# Led Level
-    def setDim(self, command):
+    def swHoriz(self, command):
         API_ENDPOINT = self.API_ENDPOINT
         ACCESS_ID = self.ACCESS_ID
         ACCESS_KEY = self.ACCESS_KEY
         DEVICEAIR_ID = self.DEVICEAIR_ID
         openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
-        self.SwStat(self)
 
-        ivr_one = 'percent'
-        percent = int(command.get('value'))
-
-        def set_percent(self, command):
-            percent = int(command.get('value')*10)
-        if percent < 1 or percent > 100:
-            LOGGER.error('Invalid Level {}'.format(percent))
-        else:
-            commands = {'commands': [
-                {'code': 'bright_value_v2', 'value': int(percent)*10}]}
+        vent = int(float(command.get('value')))
+        if vent == 1:
+            commands = {'commands': [{'code': 'switch_horizontal', 'value': True}]}
             openapi.post(
                 '/v1.0/iot-03/devices/{}/commands'.format(DEVICEAIR_ID), commands)
-            self.setDriver('GV3', percent)
-            LOGGER.info('Dimmer Setpoint = ' + str(percent) + ' Level')"""
+            time.sleep(.1)
+            self.SwStat(self)
+            self.setDriver('GV3', 0)
+            time.sleep(5)
+            self.reportDrivers()
+        elif vent == 0:
+            commands = {'commands': [{'code': 'switch_horizontal', 'value': False}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICEAIR_ID), commands)
+            time.sleep(.1)
+            self.SwStat(self)
+            self.setDriver('GV3', 1)
+            time.sleep(5)
+            self.reportDrivers()
+        else:
+            logging.error('Unknown command for Switch Horizontal {}'.format(command))
+
+    def swVert(self, command):
+        API_ENDPOINT = self.API_ENDPOINT
+        ACCESS_ID = self.ACCESS_ID
+        ACCESS_KEY = self.ACCESS_KEY
+        DEVICEAIR_ID = self.DEVICEAIR_ID
+        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
+        openapi.connect()
+
+        vent = int(float(command.get('value')))
+        if vent == 1:
+            commands = {'commands': [{'code': 'switch_vertical', 'value': True}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICEAIR_ID), commands)
+            time.sleep(.1)
+            self.SwStat(self)
+            self.setDriver('GV6', 0)
+            time.sleep(5)
+            self.reportDrivers()
+        elif vent == 0:
+            commands = {'commands': [{'code': 'switch_vertical', 'value': False}]}
+            openapi.post(
+                '/v1.0/iot-03/devices/{}/commands'.format(DEVICEAIR_ID), commands)
+            time.sleep(.1)
+            self.SwStat(self)
+            self.setDriver('GV6', 1)
+            time.sleep(5)
+            self.reportDrivers()
+        else:
+            logging.error('Unknown command for Switch Vertical {}'.format(command))
 
     def SwStat(self, command):
         API_ENDPOINT = self.API_ENDPOINT
@@ -225,21 +264,22 @@ class AirCirNode(udi_interface.Node):
     drivers = [
         {'driver': 'ST', 'value': 1, 'uom': 2, 'name': 'Online'},
         {'driver': 'GV2', 'value': 0, 'uom': 2, 'name': 'Switch Status'},
-        #{'driver': 'GV3', 'value': 0, 'uom': 51, 'name': 'Light Level'},
-        {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Light Command'},
+        {'driver': 'GV3', 'value': 0, 'uom': 51, 'name': 'Switch Horizontal'},
+        {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Fan Command'},
         {'driver': 'GV5', 'value': 0, 'uom': 25, 'name': 'Fan Speed'},
+        {'driver': 'GV6', 'value': 0, 'uom': 25, 'name': 'Switch Vertical'},
 
     ]
 
     id = 'aircir'
 
     commands = {
-        'LGTON': setSwOn,
-        'LGTOF': setSwOff,
-        'LGTCL': setFan,
-        #'LGTCFLIP': setclrflip,
-        'MODE': modeOn,
-        #'STLVL': setDim,
+        'AIRON': setSwOn,
+        'AIROF': setSwOff,
+        'AIRHOR': swHoriz,
+        'AIRVERT': swVert,
+        'MODESP': setFan,
+        'MODEA': modeOn,
         'QUERY': query,
     }
 

@@ -49,6 +49,47 @@
     </nodeDef>
     
     
+    <nodeDef id="aircir" nls="airc">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+            <st id="GV3" editor="MODEHOR" />
+            <st id="GV6" editor="MODEVRT" />
+            <st id="GV4" editor="MODEA" />
+            <st id="GV5" editor="MODESP" />
+            
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="AIRON" />
+                <cmd id="AIROF" />
+                
+                <cmd id="MODEA">
+                    <p id="" editor="MODEA" init="GV4" />
+                </cmd>
+                
+                <cmd id="MODESP">
+                    <p id="" editor="MODESP" init="GV5" />
+                </cmd>
+
+                <cmd id="AIRHOR">
+                    <p id="" editor="MODEHOR" init="GV3" />
+                </cmd>
+
+                <cmd id="AIRVERT">
+                    <p id="" editor="MODEVRT" init="GV6" />
+                </cmd>
+
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+    
+
+
+
     <!--nodeDef id="lightv2" nls="lgtv2">
         <editors />
         <sts>

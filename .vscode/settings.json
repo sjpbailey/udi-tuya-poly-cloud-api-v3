@@ -1,6 +1,13 @@
 {
     "cSpell.words": [
+        "airc",
         "aircir",
+        "AIRCL",
+        "AIRHOR",
+        "AIROF",
+        "AIRON",
+        "AIRSPD",
+        "AIRVERT",
         "BOTOF",
         "BOTON",
         "botro",
@@ -15,6 +22,7 @@
         "DEVICESW",
         "doorcontact",
         "gopol",
+        "Horiz",
         "iwmn",
         "kvtr",
         "LGTCL",
@@ -25,11 +33,15 @@
         "lightsl",
         "lightv",
         "Merkury",
+        "MODEA",
         "MODEBOB",
         "MODEBOT",
         "MODECL",
+        "MODEHOR",
+        "MODESP",
         "MODESU",
         "MODESW",
+        "MODEVRT",
         "MODEW",
         "newr",
         "pirm",
@@ -52,7 +64,8 @@
         "Tiker",
         "tock",
         "tuyanls",
-        "txejpdfda"
+        "txejpdfda",
+        "Verti"
     ],
     "[python]": {
         "editor.defaultFormatter": "ms-python.autopep8"

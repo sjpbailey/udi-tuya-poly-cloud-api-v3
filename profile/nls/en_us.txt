@@ -24,6 +24,48 @@ CMD-lgtsl20-STTMP-NAME = Light Temp
 CMD-lgtsl20-STLVL-NAME = Level White
 CMD-lgtsl20-MODEW-NAME = Command
 
+# White LED Modes
+MODEW-0 = Colour
+MODEW-1 = Scene
+MODEW-2 = Music
+MODEW-3 = White
+
+# Air Circulator productId km8pesogga58btnk
+ND-aircir-NAME = Light Node SL20
+ND-aircir-ICON = LampAndSwitch
+ST-airc-ST-NAME = Node Status
+ST-airc-GV2-NAME = Fan Status
+ST-airc-GV3-NAME = Horizontal
+ST-airc-GV4-NAME = Fan Mode Command
+ST-airc-GV5-NAME = Fan Speed Command
+ST-airc-GV6-NAME = Vertical
+
+CMD-airc-AIRON-NAME = Fan On
+CMD-airc-AIROF-NAME = Fan Off
+CMD-airc-MODESP-NAME = Fan Speed
+CMD-airc-AIRHOR-NAME = Horizontal
+CMD-airc-AIRVERT-NAME = Vertical
+CMD-airc-MODEA-NAME = Mode Command
+
+# Air Circulator Modes
+MODEA-0 = Fresh
+MODEA-1 = Nature
+MODEA-2 = Sleep
+MODEA-3 = Smart
+
+# Air Circulator Speed
+MODESP-0 = 1
+MODESP-1 = 2
+MODESP-2 = 3
+MODESP-3 = 4
+
+# Horizontal
+MODEHOR-0 = True
+MODEHOR-1 = False
+
+# Vertical
+MODEVRT-0 = True
+MODEVRT-1 = False
 
 
 
@@ -109,11 +151,7 @@ MODE-1 = Scene
 MODE-2 = Music
 
 
-# LED Modes
-MODEW-0 = Colour
-MODEW-1 = Scene
-MODEW-2 = Music
-MODEW-3 = White
+
 
 # LED Color
 MODECL-0 = Red High
