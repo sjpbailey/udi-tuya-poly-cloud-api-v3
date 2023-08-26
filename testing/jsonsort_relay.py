@@ -17,7 +17,7 @@ API_REGION = "us"
 # f = open('sample.json')
 # response = json.load(f)
 # list = json.dumps(devices, indent=4)
-
+DEVICELED_ID = '68635610e8db84fff7ea'
 
 # Node Server Controller Testing
 # Init openapi and connect
@@ -26,21 +26,26 @@ openapi.connect()
 
 # Call APIs from Tuya
 # Get device information from all devices
-response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
+#response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices" )
+response = openapi.get(
+    "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/online/")
 # print(type(response))
 
 # Save polling data sample
 # current = {'timestamp': time.time(), 'devices': response}
 response1 = json.dumps(response, indent=4)  # current, indent=4
 #print(response1)
-
+for i in response[0:1]:
+    print(i)
+    #print(i['name'])
+    #print(i['online'])
 # Writing to sample.json
 # with open("sample.json", "w") as outfile:
 #    outfile.write(str(response1))
 
 ############################### Device ID's ###################################
 # WiFi switch-4CH'68635610e8db84fff7ea'
-DEVICELED_ID = '68635610e8db84fff7ea'
+
 
 """# Switch Node
 DEVICESW_ID = '68635610e8db84fff7ea'
@@ -49,13 +54,13 @@ DEVICESW_ID = '68635610e8db84fff7ea'
 DEVICEPIR_ID = 'eb29412a460a068676g8cv'"""
 
 
-response1 = openapi.get(
+"""response1 = openapi.get(
     "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/online/")  # DEVICE_ID
 print(response1)
 for i in response1:#['result']:
     print(i)
     #if i['value'] == True:
-    #    print('gotya')
+    #    print('gotya')"""
 
 """# Need to GET switch status Query NS
 print('\n''GET Response Switch Statuses''\n')
