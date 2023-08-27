@@ -14,7 +14,7 @@ LOGGER = udi_interface.LOGGER
 
 
 class RelayNode(udi_interface.Node):
-    def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint):
+    def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint, apiUid):
         super(RelayNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address, name)  # address,name
@@ -29,6 +29,7 @@ class RelayNode(udi_interface.Node):
         self.ACCESS_KEY = apiSecret
         self.apiEndpoint = apiEndpoint
         self.API_ENDPOINT = apiEndpoint
+        self.apiUid = apiUid
         self.SwStat(self)
         self.start(self)
         
