@@ -174,8 +174,6 @@ class TuyaController(udi_interface.Node):
             online = i['online']
             LOGGER.info('online')
             LOGGER.info(online)
-            #LOGGER.info(f"CLIMATE REMAINING RUNTIME = {tempestpt} minutes\n")
-            # "switch_1" in i['status'][0]['code']:
             """if i['model'] == "PIR-wifi-V01" or i['product_name'] == "PIR Sensor " or i['product_name'] == "PIR " or i['product_name'] == "PIR Motion Detector Alarm" or i['product_name'] == "PIR senser":
                 LOGGER.info('Device Type')
                 LOGGER.info("PIR")
@@ -309,7 +307,7 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info("Relay")
                 LOGGER.info('\n')
                 node = tuya_relay_node.RelayNode(
-                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, online)
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
             else:
