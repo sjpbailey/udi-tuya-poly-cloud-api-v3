@@ -14,7 +14,7 @@ LOGGER = udi_interface.LOGGER
 
 
 class RelayNode(udi_interface.Node):
-    def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint, online):
+    def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint):
         super(RelayNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address, name)  # address,name
@@ -29,9 +29,31 @@ class RelayNode(udi_interface.Node):
         self.ACCESS_KEY = apiSecret
         self.apiEndpoint = apiEndpoint
         self.API_ENDPOINT = apiEndpoint
-        self.online = online
-        
         self.SwStat(self)
+        
+    def start(self, command):
+        openapi = TuyaOpenAPI(
+            self.apiEndpoint, self.apiAccessId, self.apiSecret)
+        openapi.connect()
+        # Get device information from all devices
+        response = openapi.get("/v1.0/users/" + self.apiUid + "/devices")
+        # Save polling data sample
+        response1 = json.dumps(response, indent=4)  # current, indent=4
+        LOGGER.info(response1)
+        LOGGER.info('\n''Devices Sorted for ADD Node''\n')
+        for i in response['result']:
+            online = i['online']
+            LOGGER.info('online')
+            LOGGER.info(online)
+        # Device Online
+            if online == True:
+                LOGGER.info(self.online)
+                self.setDriver('ST', 1)
+            if online == False:
+                LOGGER.info(self.online)
+                self.setDriver('ST', 0)
+            else:
+                pass
 
     def setSwOn1(self, command):
         API_ENDPOINT = self.API_ENDPOINT
