@@ -31,9 +31,9 @@ class RelayNode(udi_interface.Node):
         self.API_ENDPOINT = apiEndpoint
         self.apiUid = apiUid
         self.SwStat(self)
-        self.start(self)
+        #self.start(self)
         
-    def start(self, command):
+    #def start(self, command):
         openapi = TuyaOpenAPI(
             self.apiEndpoint, self.apiAccessId, self.apiSecret)
         openapi.connect()
