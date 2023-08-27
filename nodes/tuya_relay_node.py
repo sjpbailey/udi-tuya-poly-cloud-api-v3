@@ -49,10 +49,10 @@ class RelayNode(udi_interface.Node):
             LOGGER.info(online)
         # Device Online
             if online == True:
-                LOGGER.info(self.online)
+                LOGGER.info(online)
                 self.setDriver('ST', 1)
             if online == False:
-                LOGGER.info(self.online)
+                LOGGER.info(online)
                 self.setDriver('ST', 0)
             else:
                 pass
