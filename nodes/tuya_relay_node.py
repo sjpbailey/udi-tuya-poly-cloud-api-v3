@@ -38,7 +38,7 @@ class RelayNode(udi_interface.Node):
             self.apiEndpoint, self.apiAccessId, self.apiSecret)
         openapi.connect()
         # Get device information from all devices
-        response = openapi.get("/v1.0/users/" + self.apiUid + "/devices")
+        response = openapi.get("/v1.0/users/" + self.apiUid + self.deviceid + "/devices")
         # Save polling data sample
         response1 = json.dumps(response, indent=4)  # current, indent=4
         LOGGER.info(response1)
