@@ -35,7 +35,7 @@ response = openapi.get(
 # current = {'timestamp': time.time(), 'devices': response}
 response1 = json.dumps(response, indent=4)  # current, indent=4
 #print(response1)
-for i in response[0:1]:
+for i in response:
     print(i)
     #print(i['name'])
     #print(i['online'])

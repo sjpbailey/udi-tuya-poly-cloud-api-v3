@@ -14,7 +14,7 @@ LOGGER = udi_interface.LOGGER
 
 
 class RelayNode(udi_interface.Node):
-    def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint):
+    def __init__(self, polyglot, primary, address, name, new_id, deviceid, apiAccessId, apiSecret, apiEndpoint, online):
         super(RelayNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address, name)  # address,name
@@ -29,6 +29,8 @@ class RelayNode(udi_interface.Node):
         self.ACCESS_KEY = apiSecret
         self.apiEndpoint = apiEndpoint
         self.API_ENDPOINT = apiEndpoint
+        self.online = online
+        
         self.SwStat(self)
 
     def setSwOn1(self, command):
@@ -187,13 +189,15 @@ class RelayNode(udi_interface.Node):
                 self.setDriver('GV5', 0)
             pass
         # Device Online
-        """for i in response1['result']:
-            if i['online'] == True:
+        for i in response1['result']:
+            if self.online == True:
+                LOGGER.info(self.online)
                 self.setDriver('ST', 1)
-            if i['online'] == False:
+            if self.online == False:
+                LOGGER.info(self.online)
                 self.setDriver('ST', 0)
             else:
-                pass"""
+                pass
 
     def poll(self, polltype):
         if 'longPoll' in polltype:
