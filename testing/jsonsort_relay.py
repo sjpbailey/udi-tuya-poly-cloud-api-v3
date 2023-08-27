@@ -11,7 +11,7 @@ ACCESS_KEY = "46d6072ffd724e0ba5ebeb5cc6b9dce9"
 API_ENDPOINT = "https://openapi.tuyaus.com/"
 MQ_ENDPOINT = "wss://mqe.tuyaus.com:8285/"
 API_REGION = "us"
-
+API_UID = "az1610958067414WkfOO"
 
 # from file
 # f = open('sample.json')
@@ -25,20 +25,14 @@ openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
 openapi.connect()
 
 # Call APIs from Tuya
-# Get device information from all devices
-#response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices" )
-response = openapi.get(
-    "/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/online/")
-# print(type(response))
 
-# Save polling data sample
-# current = {'timestamp': time.time(), 'devices': response}
-response1 = json.dumps(response, indent=4)  # current, indent=4
-#print(response1)
-for i in response:
-    print(i)
-    #print(i['name'])
-    #print(i['online'])
+response = openapi.get("/v1.0/users/" + API_UID + "/devices")#DEVICELED_ID) #"/devices")
+#
+#print(response)
+for i in response['result']:
+    #print(i)
+    print(i['name'])
+    print(i['online'])
 # Writing to sample.json
 # with open("sample.json", "w") as outfile:
 #    outfile.write(str(response1))
