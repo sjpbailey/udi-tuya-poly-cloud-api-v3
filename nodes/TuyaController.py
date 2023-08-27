@@ -307,7 +307,7 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info("Relay")
                 LOGGER.info('\n')
                 node = tuya_relay_node.RelayNode(
-                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiUid)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
             else:
