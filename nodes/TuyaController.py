@@ -172,7 +172,8 @@ class TuyaController(udi_interface.Node):
             model = i['model']
             LOGGER.info(model)
             online = i['online']
-            LOGGER.info(f"Online = {'online'} ")
+            LOGGER.info('online')
+            LOGGER.info(online)
             #LOGGER.info(f"CLIMATE REMAINING RUNTIME = {tempestpt} minutes\n")
             # "switch_1" in i['status'][0]['code']:
             """if i['model'] == "PIR-wifi-V01" or i['product_name'] == "PIR Sensor " or i['product_name'] == "PIR " or i['product_name'] == "PIR Motion Detector Alarm" or i['product_name'] == "PIR senser":
