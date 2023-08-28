@@ -17,16 +17,20 @@ API_UID = "az1610958067414WkfOO"
 # f = open('sample.json')
 # response = json.load(f)
 # list = json.dumps(devices, indent=4)
-DEVICELED_ID = '68635610e8db84fff7ea'
-
-# Node Server Controller Testing
 # Init openapi and connect
 openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
 openapi.connect()
 
+#response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
+# print(type(response))
+DEVICELED_ID = '68635610e8db84fff7ea'
+
+# Node Server Controller Testing
+
+
 # Call APIs from Tuya
 
-response = openapi.get("/v1.0/users/" + API_UID + "/devices")#DEVICELED_ID) #"/devices")
+"""response = openapi.get("/v1.0/users/" + API_UID + "/devices")#DEVICELED_ID) #"/devices")
 #
 #print(response)
 for i in response['result']:
@@ -35,7 +39,14 @@ for i in response['result']:
     print(i['online'])
 # Writing to sample.json
 # with open("sample.json", "w") as outfile:
-#    outfile.write(str(response1))
+#    outfile.write(str(response1))"""
+
+response = openapi.get("/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")
+# Save polling data sample
+# current = {'timestamp': time.time(), 'devices': response}
+response1 = json.dumps(response, indent=4)  # current, indent=4
+#print(response1)
+
 
 ############################### Device ID's ###################################
 # WiFi switch-4CH'68635610e8db84fff7ea'
