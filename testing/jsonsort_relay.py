@@ -23,28 +23,31 @@ openapi.connect()
 
 #response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
 # print(type(response))
-DEVICELED_ID = '68635610e8db84fff7ea'
+DEVICELED_ID = '68635610e8db84fff7ea' # 'ebfc16d57ed374932cjqfk'
 
 # Node Server Controller Testing
 
 
 # Call APIs from Tuya
 
-"""response = openapi.get("/v1.0/users/" + API_UID + "/devices")#DEVICELED_ID) #"/devices")
-#
-#print(response)
-for i in response['result']:
-    #print(i)
-    print(i['name'])
-    print(i['online'])
+#response = openapi.get("/v1.0/users/" + API_UID + "/devices")#DEVICELED_ID) #"/devices")
+
+
+response = openapi.get("/v1.0/devices/{}".format(DEVICELED_ID))
+print(response['result']['online'])
+"""for i in response:
+    print(i)
+    #print(i['name'])
+    #print(i['result'])
 # Writing to sample.json
 # with open("sample.json", "w") as outfile:
 #    outfile.write(str(response1))"""
 
-response = openapi.get("/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")
+#response = openapi.get("/v1.0/iot-03/devices/{}/status".format(DEVICELED_ID))
+#response = openapi.get("/v1.0/devices/{}".format(DEVICELED_ID))# + "/status/")
 # Save polling data sample
 # current = {'timestamp': time.time(), 'devices': response}
-response1 = json.dumps(response, indent=4)  # current, indent=4
+#response1 = json.dumps(response, indent=4)  # current, indent=4
 #print(response1)
 
 

@@ -38,24 +38,21 @@ class RelayNode(udi_interface.Node):
             self.apiEndpoint, self.apiAccessId, self.apiSecret)
         openapi.connect()
         # Get device information from all devices
-        response = openapi.get("/v1.0/users/" + self.apiUid + self.deviceid + "/devices")
+        #response = openapi.get("/v1.0/users/" + self.apiUid + self.deviceid + "/devices")
+        response = openapi.get("/v1.0/devices/{}".format(deviceid))
+        LOGGER.info(response['result']['online'])
         # Save polling data sample
-        response1 = json.dumps(response, indent=4)  # current, indent=4
-        LOGGER.info(response1)
-        LOGGER.info('\n''Devices Sorted for ADD Node''\n')
-        for i in response['result']:
-            online = i['online']
-            LOGGER.info('online')
-            LOGGER.info(online)
-        # Device Online
-            if online == True:
-                LOGGER.info(online)
-                self.setDriver('ST', 1)
-            if online == False:
-                LOGGER.info(online)
-                self.setDriver('ST', 0)
-            else:
-                pass
+        #response1 = json.dumps(response, indent=4)  # current, indent=4
+        #LOGGER.info(response1)
+        #LOGGER.info('\n''Devices Sorted for ADD Node''\n')
+        if response['result']['online'] == True:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 1)
+        if response['result']['online'] == False:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 0)
+        else:
+            pass
 
     def setSwOn1(self, command):
         API_ENDPOINT = self.API_ENDPOINT
