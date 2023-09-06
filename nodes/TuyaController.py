@@ -174,7 +174,7 @@ class TuyaController(udi_interface.Node):
             online = i['online']
             LOGGER.info('online')
             LOGGER.info(online)
-            if i['model'] == "PIR-wifi-V01" or i['product_name'] == "PIR Sensor " or i['product_name'] == "PIR " or i['product_name'] == "PIR Motion Detector Alarm" or i['product_name'] == "PIR senser":
+            """if i['model'] == "PIR-wifi-V01" or i['product_name'] == "PIR Sensor " or i['product_name'] == "PIR " or i['product_name'] == "PIR Motion Detector Alarm" or i['product_name'] == "PIR senser":
                 LOGGER.info('Device Type')
                 LOGGER.info("PIR")
                 LOGGER.info('\n')
@@ -301,8 +301,8 @@ class TuyaController(udi_interface.Node):
                 node = tuya_curtain_node.CurtainNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiRegion)
                 self.poly.addNode(node)
-                self.wait_for_node_done()
-            elif i['model'] == "TY-DIY-S04":
+                self.wait_for_node_done()"""
+            if i['model'] == "TY-DIY-S04":
                 LOGGER.info('Device Type')
                 LOGGER.info("Relay")
                 LOGGER.info('\n')
