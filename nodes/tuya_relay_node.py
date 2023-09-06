@@ -195,9 +195,9 @@ class RelayNode(udi_interface.Node):
             elif i['value'] == False:
                 self.setDriver('GV5', 0)
             pass
-        
-        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
-        openapi.connect()
+        #### Device Online Status
+        #openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
+        #openapi.connect()
         response = openapi.get("/v1.0/devices/{}".format(DEVICESW_ID))
         LOGGER.info(response['result']['online'])
         if response['result']['online'] == True:
