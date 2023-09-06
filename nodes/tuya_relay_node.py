@@ -31,15 +31,18 @@ class RelayNode(udi_interface.Node):
         self.API_ENDPOINT = apiEndpoint
         self.apiUid = apiUid
         self.SwStat(self)
-        #self.start(self)
+        self.start(self)
         
-    #def start(self, command):
-        openapi = TuyaOpenAPI(
-            self.apiEndpoint, self.apiAccessId, self.apiSecret)
+    def start(self, command):
+        API_ENDPOINT = self.API_ENDPOINT
+        ACCESS_ID = self.ACCESS_ID
+        ACCESS_KEY = self.ACCESS_KEY
+        DEVICESW_ID = self.DEVICESW_ID
+        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
         openapi.connect()
         # Get device information from all devices
         #response = openapi.get("/v1.0/users/" + self.apiUid + self.deviceid + "/devices")
-        response = openapi.get("/v1.0/devices/{}".format(deviceid))
+        response = openapi.get("/v1.0/devices/{}".format(DEVICESW_ID))
         LOGGER.info(response['result']['online'])
         # Save polling data sample
         #response1 = json.dumps(response, indent=4)  # current, indent=4
@@ -220,6 +223,7 @@ class RelayNode(udi_interface.Node):
 
     def query(self, command=None):
         self.SwStat(self)
+        self.start(self)
         self.reportDrivers()
 
     drivers = [
