@@ -31,31 +31,14 @@ class RelayNode(udi_interface.Node):
         self.API_ENDPOINT = apiEndpoint
         self.apiUid = apiUid
         self.SwStat(self)
-        self.start(self)
+        #self.start(self)
         
-    def start(self, command):
+    """def start(self, command):
         API_ENDPOINT = self.API_ENDPOINT
         ACCESS_ID = self.ACCESS_ID
         ACCESS_KEY = self.ACCESS_KEY
-        DEVICESW_ID = self.DEVICESW_ID
-        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
-        openapi.connect()
-        # Get device information from all devices
-        #response = openapi.get("/v1.0/users/" + self.apiUid + self.deviceid + "/devices")
-        response = openapi.get("/v1.0/devices/{}".format(DEVICESW_ID))
-        LOGGER.info(response['result']['online'])
-        # Save polling data sample
-        #response1 = json.dumps(response, indent=4)  # current, indent=4
-        #LOGGER.info(response1)
-        #LOGGER.info('\n''Devices Sorted for ADD Node''\n')
-        if response['result']['online'] == True:
-            LOGGER.info(response['result']['online'])
-            self.setDriver('ST', 1)
-        if response['result']['online'] == False:
-            LOGGER.info(response['result']['online'])
-            self.setDriver('ST', 0)
-        else:
-            pass
+        DEVICESW_ID = self.DEVICESW_ID"""
+        
 
     def setSwOn1(self, command):
         API_ENDPOINT = self.API_ENDPOINT
@@ -212,6 +195,19 @@ class RelayNode(udi_interface.Node):
             elif i['value'] == False:
                 self.setDriver('GV5', 0)
             pass
+        
+        openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
+        openapi.connect()
+        response = openapi.get("/v1.0/devices/{}".format(DEVICESW_ID))
+        LOGGER.info(response['result']['online'])
+        if response['result']['online'] == True:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 1)
+        if response['result']['online'] == False:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 0)
+        else:
+            pass
 
     def poll(self, polltype):
         if 'longPoll' in polltype:
@@ -223,7 +219,7 @@ class RelayNode(udi_interface.Node):
 
     def query(self, command=None):
         self.SwStat(self)
-        self.start(self)
+        #self.start(self)
         self.reportDrivers()
 
     drivers = [
