@@ -31,7 +31,7 @@ response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
 # Save polling data sample
 # current = {'timestamp': time.time(), 'devices': response}
 response1 = json.dumps(response, indent=4)  # current, indent=4
-#print(response1)
+print(response1)
 
 # Writing to sample.json
 # with open("sample.json", "w") as outfile:
@@ -41,9 +41,9 @@ response1 = json.dumps(response, indent=4)  # current, indent=4
 
 ########################       Sweeping Robot     ###################################################
 # Switch Node
-DEVICEBOT_ID = 'eb5add4f3bbf86a94bs3o6'
-response = openapi.get(
-    "/v1.0/iot-03/devices/{}".format(DEVICEBOT_ID) + "/status/")  # DEVICE_ID
+#DEVICEBOT_ID = 'eb5add4f3bbf86a94bs3o6'
+#response = openapi.get(
+#    "/v1.0/iot-03/devices/{}".format(DEVICEBOT_ID) + "/status/")  # DEVICE_ID
 
 
 #### Statuses
@@ -59,7 +59,7 @@ response = openapi.get(
 
 
 #Sweeping Robot
-for i in response['result'][3:4]:
+"""for i in response['result'][3:4]:
     print(i['code'])
     print(i['value'])
     if i['value'] == 'charge_done':
@@ -83,7 +83,7 @@ for i in response['result'][3:4]:
     
     
     else:
-        print("no")
+        print("no")"""
 
 #### Robot Sweeper
 """result ={

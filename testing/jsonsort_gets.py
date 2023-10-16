@@ -8,8 +8,8 @@ from typing import NoReturn
 from tuya_bulb_control import Bulb
 from tkinter import Tk, Button, colorchooser
 
-ACCESS_ID = "yourid"
-ACCESS_KEY = "key"
+ACCESS_ID = "txejpdfda9iwmn5cg2es"
+ACCESS_KEY = "46d6072ffd724e0ba5ebeb5cc6b9dce9"
 API_ENDPOINT = "https://openapi.tuyaus.com/"
 MQ_ENDPOINT = "wss://mqe.tuyaus.com:8285/"
 API_REGION = "us"
@@ -28,9 +28,10 @@ openapi.connect()
 
 # Call APIs from Tuya
 # Get device information from all devices
-response = openapi.get("/v1.0/users/az1582815938108xjA27/devices")
+#GET: /v1.0/iot-03/device-groups
+response = openapi.get("/v1.0/users/az1582815938108xjA27/devices")    #openapi.get("/v1.0/users/az1582815938108xjA27/devices")
 # print(type(response))
-
+#device stage right eb5ee08fd7cdd8a8584g06
 # Save polling data sample
 # current = {'timestamp': time.time(), 'devices': response}
 response1 = json.dumps(response, indent=4)  # current, indent=4
@@ -39,7 +40,7 @@ print(response1)
 #for i in response['result']:
 #    print(i)
 
-DEVICELED_ID = 'ebd73308f740063caalpdc'
+"""DEVICELED_ID = 'ebd73308f740063caalpdc'
 response = openapi.get("/v1.0/iot-03/devices/{}".format(DEVICELED_ID) + "/status/")  # DEVICE_ID
 #print(response1)
 #print(response)
@@ -54,7 +55,7 @@ print(response['result'][3]['value'])
 print(response['result'][4]['code'])
 print(response['result'][4]['value'])
 print(response['result'][5]['code'])
-print(response['result'][5]['value'])
+print(response['result'][5]['value'])"""
 
 #for i in response['result']:
 ##    print(i['code'])

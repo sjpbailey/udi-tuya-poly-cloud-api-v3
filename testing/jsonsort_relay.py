@@ -21,8 +21,11 @@ API_UID = "az1610958067414WkfOO"
 openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
 openapi.connect()
 
-#response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
-# print(type(response))
+response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
+#print(response)
+response1 = json.dumps(response, indent=4)
+print(response1)
+
 DEVICELED_ID = '68635610e8db84fff7ea' # 'ebfc16d57ed374932cjqfk'
 
 # Node Server Controller Testing
