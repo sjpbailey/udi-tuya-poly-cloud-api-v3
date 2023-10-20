@@ -76,6 +76,18 @@ class WaterSenNode(udi_interface.Node):
         for i in response1['result'][1:2]:
             LOGGER.info(i['value'])
             self.setDriver('GV3', i['value'])
+            
+        ### Online Status
+        response = openapi.get("/v1.0/devices/{}".format(DEVICESW_ID))
+        LOGGER.info(response['result']['online'])
+        if response['result']['online'] == True:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 1)
+        if response['result']['online'] == False:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 0)
+        else:
+            pass
 
     def gopol(self, command):
         self.poll()
