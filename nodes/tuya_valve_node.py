@@ -78,6 +78,18 @@ class ValveNode(udi_interface.Node):
             elif i['value'] == False:
                 self.setDriver('GV2', 0)
 
+        ### Online Status
+        response = openapi.get("/v1.0/devices/{}".format(DEVICESW_ID))
+        LOGGER.info(response['result']['online'])
+        if response['result']['online'] == True:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 1)
+        if response['result']['online'] == False:
+            LOGGER.info(response['result']['online'])
+            self.setDriver('ST', 0)
+        else:
+            pass
+
     def poll(self, polltype):
         if 'longPoll' in polltype:
             LOGGER.debug('longPoll (node)')
