@@ -69,4 +69,7 @@
     <editor id="RUNBOB">
         <range uom="25" subset="0-1" nls="RUNBOB" />
     </editor>
+    <editor id="SENSE">
+        <range uom="25" subset="0-1" nls="SENS" />
+    </editor>
 </editors>

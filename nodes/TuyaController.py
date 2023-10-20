@@ -312,15 +312,15 @@ class TuyaController(udi_interface.Node):
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiUid)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i["model"] == "ARD-100+" or i["product_id"] == "nguto5atyd2xxnap":
+            elif i["product_id"] == "upgcbody" or i["product_id"] == "js34cuma":
                 LOGGER.info('Device Type')
-                LOGGER.info("PIR")
+                LOGGER.info("LEAK SENSOR")
                 LOGGER.info('\n')
                 node = tuya_watersensor_node.WaterSenNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
-            elif i['model'] == "SS01S(\u4e0d\u5206\u8d1f\u8f7d)\u4e50\u946b" or i['model'] == "\u5f00\u5173(\u84dd\u7259+Wi-Fi)" or i['model'] == "SS01S\uff08\u706b\u7ebf\u8d1f\u8f7d\u7ebf\u4e0d\u5206\u7248\u672c\uff09BK\u7248\u672c":
+            elif i['model'] == "ARD-100+" or i['product_id'] == "nguto5atyd2xxnap":
                 LOGGER.info('Device Type')
                 LOGGER.info("VALVE")
                 LOGGER.info('\n')

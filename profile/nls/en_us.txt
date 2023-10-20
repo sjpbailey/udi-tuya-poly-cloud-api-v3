@@ -336,11 +336,15 @@ ST-water-GV3-NAME = Battery Percent
 CMD-water-QUERY-NAME = Query
 CMD-water-POLLIT-NAME = Poll
 
+# Leak Status
+SENS-0 = Normal
+SENS-1 = Leak
+
 # Valve
 ND-valve-NAME = Valve 
 ND-valve-ICON = Irrigation
-ST-swt-ST-NAME = Node Status
-ST-swt-GV2-NAME = Switch Status
-CMD-swt-SWTON-NAME = Switch On
-CMD-swt-SWTOF-NAME = Switch Off
-CMD-swt-QUERY-NAME = Query
+ST-vlv-ST-NAME = Node Status
+ST-vlv-GV2-NAME = Switch Status
+CMD-vlv-SWTON-NAME = Switch On
+CMD-vlv-SWTOF-NAME = Switch Off
+CMD-vlv-QUERY-NAME = Query
