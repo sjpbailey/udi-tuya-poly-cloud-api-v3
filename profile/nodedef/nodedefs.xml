@@ -137,6 +137,22 @@
         </cmds>
     </nodeDef>
 
+    <nodeDef id="watersen" nls="water">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+            <st id="GV3" editor="I_PERCENT" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="QUERY" />
+                <cmd id="POLLIT" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+
 
     <!--nodeDef id="lightv2" nls="lgtv2">
         <editors />

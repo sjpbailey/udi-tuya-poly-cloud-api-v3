@@ -1,0 +1,45 @@
+{
+"result": [
+        {
+            "active_time": 1697424889,
+            "biz_type": 18,
+            "category": "kg",
+            "create_time": 1693065827,
+            "icon": "smart/icon/ay1541487337020lAqrO/1b30ea7805019c72fc4e8c08c22e7a45.jpg",
+            "id": "ebd1f2c4bd0c487661tzyw",
+            "ip": "174.171.104.62",
+            "lat": "29.5745",
+            "local_key": "u6l5{(U'eci75'1=",
+            "lon": "-95.0509",
+            "model": "ARD-100+",
+            "name": "Upper Deck",
+            "online": true,
+            "owner_id": "162929934",
+            "product_id": "nguto5atyd2xxnap",
+            "product_name": "Smart valve controller",
+            "status": [
+                {
+                    "code": "switch_1",
+                    "value": false
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                },
+                {
+                    "code": "relay_status",
+                    "value": "last"
+                }
+            ],
+            "sub": false,
+            "time_zone": "-05:00",
+            "uid": "az1690045026587t2pFy",
+            "update_time": 1697524772,
+            "uuid": "2237b84939b97d7b"
+        }
+        
+    ],
+    "success": true,
+    "t": 1697609234255,
+    "tid": "951a106e6d7c11ee8b62ea7d43a7f458"
+}

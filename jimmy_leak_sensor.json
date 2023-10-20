@@ -1,0 +1,75 @@
+{
+"result": [
+        {
+            "active_time": 1694891658,
+            "biz_type": 18,
+            "category": "sj",
+            "create_time": 1694890397,
+            "icon": "smart/icon/ay15427647462366edzT/64fb716983297a0df40deae40a719aef.png",
+            "id": "eb16be574a05617e95b3av",
+            "ip": "",
+            "lat": "29.5700",
+            "local_key": "!y3-m=gjYXUGa&c4",
+            "lon": "-95.0500",
+            "model": "\u514d\u5f00\u53d1\u6c34\u6d78\u4f20\u611f\u5668",
+            "name": "Water leak sensor 2",
+            "node_id": "a4c138cb15af5c76",
+            "online": false,
+            "owner_id": "162929934",
+            "product_id": "upgcbody",
+            "product_name": "Water leak sensor",
+            "status": [
+                {
+                    "code": "watersensor_state",
+                    "value": "normal"
+                },
+                {
+                    "code": "battery_percentage",
+                    "value": 100
+                }
+            ],
+            "sub": true,
+            "time_zone": "-05:00",
+            "uid": "az1690045026587t2pFy",
+            "update_time": 1694891658,
+            "uuid": "a4c138cb15af5c76"
+        },
+        {
+            "active_time": 1694890492,
+            "biz_type": 18,
+            "category": "sj",
+            "create_time": 1694890492,
+            "icon": "smart/icon/ay15107356719526e3ps/2654ae1eb437c4c87c253a034ab29371.png",
+            "id": "ebbd94d82b9f89f6f5q8s0",
+            "ip": "",
+            "lat": "29.5700",
+            "local_key": "!y3-m=gjYXUGa&c4",
+            "lon": "-95.0500",
+            "model": "",
+            "name": "Water leak sensor",
+            "node_id": "a4c138dd6e707118",
+            "online": false,
+            "owner_id": "162929934",
+            "product_id": "js34cuma",
+            "product_name": "Water leak sensor",
+            "status": [
+                {
+                    "code": "watersensor_state",
+                    "value": "normal"
+                },
+                {
+                    "code": "battery_percentage",
+                    "value": 100
+                }
+            ],
+            "sub": true,
+            "time_zone": "-05:00",
+            "uid": "az1690045026587t2pFy",
+            "update_time": 1694890492,
+            "uuid": "a4c138dd6e707118"
+        }
+    ],
+    "success": true,
+    "t": 1697609234255,
+    "tid": "951a106e6d7c11ee8b62ea7d43a7f458"
+}

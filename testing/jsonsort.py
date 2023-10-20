@@ -2,11 +2,31 @@ import json
 
 
 # from file
-f = open('snapshot.json')
+f = open('jimmy_leak_sensor.json')
 devices = json.load(f)
 list = json.dumps(devices, indent=4)
 
-for i in devices['devices']:
+for i in devices['result']:
+    print(i['name'])
+    #print(i['product_name'])
+    #print(i['id'])
+    #print(i['product_id'])
+    #print(i['status'])
+    for i in i['status'][0:1]:
+        print(i['code'])
+        print(i['value'])
+    
+    #for i in i['status'][1:2]:
+    #    print(i['code'])
+    #    print(i['value'])
+    
+
+
+
+
+
+
+"""for i in devices['result']:
     # name = i['name']
     print(i['name'])
     print(i['id'])
@@ -16,7 +36,7 @@ for i in devices['devices']:
 if "1" in i["dps"]["dps"]:
     print("SWITCH")
 elif "20" in i["dps"]["dps"]:
-    print("LED")
+    print("LED")"""
 
 # for key in list:
 #   print(key)

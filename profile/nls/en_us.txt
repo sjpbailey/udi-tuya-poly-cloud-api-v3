@@ -260,6 +260,15 @@ ST-pir-GV3-NAME = Battery Percent
 CMD-pir-QUERY-NAME = Query
 CMD-pir-POLLIT-NAME = Poll
 
+# Water Detector
+ND-watersen-NAME = Leak Sensor 
+ND-watersen-ICON = MotionSensor
+ST-water-ST-NAME = Node Status
+ST-water-GV2-NAME = Water On Floor
+ST-water-GV3-NAME = Battery Percent
+CMD-water-QUERY-NAME = Query
+CMD-water-POLLIT-NAME = Poll
+
 # Door Motion
 ND-pirmd-NAME = PIR 
 ND-pirmd-ICON = MotionSensor

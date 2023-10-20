@@ -27,6 +27,7 @@ from nodes import tuya_light_node_v1
 from nodes import tuya_light_SL20_white
 from nodes import tuya_air_circulator
 from nodes import tuya_curtain_node
+from nodes import tuya_watersensor_node
 
 LOGGER = udi_interface.LOGGER
 Custom = udi_interface.Custom
@@ -308,6 +309,14 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info('\n')
                 node = tuya_relay_node.RelayNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiUid)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
+            elif i["product_id"] == "upgcbody" or i["product_id"] == "js34cuma":
+                LOGGER.info('Device Type')
+                LOGGER.info("PIR")
+                LOGGER.info('\n')
+                node = tuya_watersensor_node.WaterSenNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
             else:
