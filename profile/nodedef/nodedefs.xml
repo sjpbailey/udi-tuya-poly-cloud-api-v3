@@ -153,6 +153,22 @@
         </cmds>
     </nodeDef>
 
+    <nodeDef id="valve" nls="vlv">
+        <editors />
+        <sts>
+            <st id="ST" editor="bool" />
+            <st id="GV2" editor="bool" />
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="SWTON" />
+                <cmd id="SWTOF" />
+                <cmd id="QUERY" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+
 
     <!--nodeDef id="lightv2" nls="lgtv2">
         <editors />

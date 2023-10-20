@@ -2,7 +2,7 @@ import json
 
 
 # from file
-f = open('jimmy_leak_sensor.json')
+f = open('jimmy_valve.json')
 devices = json.load(f)
 list = json.dumps(devices, indent=4)
 
