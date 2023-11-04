@@ -16,6 +16,7 @@ from tuya_connector import (
 from nodes import tuya_robotvac_node
 from nodes import tuya_pulsar_node
 from nodes import tuya_pir_node
+from nodes import tuya_pir2_node
 from nodes import tuya_pirDoor_node
 from nodes import tuya_relay_node
 from nodes import tuya_relay_node_3
@@ -310,6 +311,14 @@ class TuyaController(udi_interface.Node):
                 LOGGER.info('\n')
                 node = tuya_relay_node.RelayNode(
                     self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint, self.apiUid)
+                self.poly.addNode(node)
+                self.wait_for_node_done()
+            elif i['model'] == "1.0.1" or i['product_id'] == "k2h8vkj98fhvnpiv":
+                LOGGER.info('Device Type')
+                LOGGER.info("PIR2")
+                LOGGER.info('\n')
+                node = tuya_pir2_node.PirNode(
+                    self.poly, self.address, address, name, new_id, deviceid, self.apiAccessId, self.apiSecret, self.apiEndpoint)
                 self.poly.addNode(node)
                 self.wait_for_node_done()
             elif i["product_id"] == "upgcbody" or i["product_id"] == "js34cuma":
