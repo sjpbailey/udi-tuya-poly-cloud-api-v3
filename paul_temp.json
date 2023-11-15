@@ -1,0 +1,48 @@
+{
+"result": [
+        {
+            "active_time": 1692230619,
+            "biz_type": 18,
+            "category": "wsdcg",
+            "create_time": 1692230619,
+            "icon": "smart/icon/ay1525749833414yotNt/d9d4ceec63cb81ff6e8c8d6c2fb4edb3.png",
+            "id": "ebc5ad49ea14af4c0d6als",
+            "ip": "73.203.51.211",
+            "lat": "",
+            "local_key": "=]IWL1av?mW+rVX<",
+            "lon": "",
+            "model": "TH01 CB3S",
+            "name": "Porch",
+            "online": true,
+            "owner_id": "81219732",
+            "product_id": "lf36y5nwb8jkxwgg",
+            "product_name": "T & H Sensor",
+            "status": [
+                {
+                    "code": "va_temperature",
+                    "value": 56
+                },
+                {
+                    "code": "va_humidity",
+                    "value": 55
+                },
+                {
+                    "code": "battery_state",
+                    "value": "middle"
+                },
+                {
+                    "code": "temp_unit_convert",
+                    "value": "f"
+                }
+            ],
+            "sub": false,
+            "time_zone": "-06:00",
+            "uid": "az1662159548013Et3Yv",
+            "update_time": 1698955044,
+            "uuid": "95357c12a61cdf83"
+        }
+    ],
+    "success": true,
+    "t": 1698955354650,
+    "tid": "c3711ef879ba11ee946f2e28f447d5d3"
+}

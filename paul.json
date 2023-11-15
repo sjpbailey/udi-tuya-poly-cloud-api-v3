@@ -1,0 +1,271 @@
+{
+"result": [
+        {
+            "active_time": 1692230619,
+            "biz_type": 18,
+            "category": "wsdcg",
+            "create_time": 1692230619,
+            "icon": "smart/icon/ay1525749833414yotNt/d9d4ceec63cb81ff6e8c8d6c2fb4edb3.png",
+            "id": "ebc5ad49ea14af4c0d6als",
+            "ip": "73.203.51.211",
+            "lat": "",
+            "local_key": "=]IWL1av?mW+rVX<",
+            "lon": "",
+            "model": "TH01 CB3S",
+            "name": "Porch",
+            "online": true,
+            "owner_id": "81219732",
+            "product_id": "lf36y5nwb8jkxwgg",
+            "product_name": "T & H Sensor",
+            "status": [
+                {
+                    "code": "va_temperature",
+                    "value": 56
+                },
+                {
+                    "code": "va_humidity",
+                    "value": 55
+                },
+                {
+                    "code": "battery_state",
+                    "value": "middle"
+                },
+                {
+                    "code": "temp_unit_convert",
+                    "value": "f"
+                }
+            ],
+            "sub": false,
+            "time_zone": "-06:00",
+            "uid": "az1662159548013Et3Yv",
+            "update_time": 1698955044,
+            "uuid": "95357c12a61cdf83"
+        },
+        {
+            "active_time": 1698952476,
+            "biz_type": 18,
+            "category": "wg2",
+            "create_time": 1698952476,
+            "icon": "smart/icon/ay1511250453937mDBJE/fd769d3fd751b63dd8fbe7aa5d47b102.png",
+            "id": "ebdabe8671c89b8732oefg",
+            "ip": "173.79.136.14",
+            "lat": "39.0300",
+            "local_key": "`VJBFO%UCmN#d.F|",
+            "lon": "-77.3400",
+            "model": "WG06",
+            "name": "GW06",
+            "online": true,
+            "owner_id": "173735319",
+            "product_id": "eibcxxeccnhvo23m",
+            "product_name": "GW06",
+            "status": [
+                {
+                    "code": "switch_alarm_sound",
+                    "value": false
+                },
+                {
+                    "code": "master_state",
+                    "value": "normal"
+                },
+                {
+                    "code": "factory_reset",
+                    "value": false
+                },
+                {
+                    "code": "alarm_active",
+                    "value": ""
+                }
+            ],
+            "sub": true,
+            "time_zone": "-04:00",
+            "uid": "az1662159548013Et3Yv",
+            "update_time": 1698954213,
+            "uuid": "edc6006d717685c6"
+        },
+        {
+            "active_time": 1698952549,
+            "biz_type": 18,
+            "category": "cl",
+            "create_time": 1698952549,
+            "icon": "smart/icon/ay1520042877959dqQoX/250790e5bd71b772cd88c3fc2f2a9d4a.png",
+            "id": "eb1c6aa918d625a802z74i",
+            "ip": "",
+            "lat": "39.0300",
+            "local_key": "`VJBFO%UCmN#d.F|",
+            "lon": "-77.3400",
+            "model": "AM22/AM25/AM28",
+            "name": "Bedroom",
+            "node_id": "040d84fffe1db97d",
+            "online": true,
+            "owner_id": "173735319",
+            "product_id": "zuz7f94z",
+            "product_name": "AOk_zigbee motor",
+            "status": [
+                {
+                    "code": "control",
+                    "value": "stop"
+                },
+                {
+                    "code": "percent_control",
+                    "value": 88
+                },
+                {
+                    "code": "percent_state",
+                    "value": 0
+                },
+                {
+                    "code": "control_back_mode",
+                    "value": "back"
+                },
+                {
+                    "code": "work_state",
+                    "value": "opening"
+                },
+                {
+                    "code": "fault",
+                    "value": 0
+                }
+            ],
+            "sub": true,
+            "time_zone": "-04:00",
+            "uid": "az1662159548013Et3Yv",
+            "update_time": 1698952729,
+            "uuid": "040d84fffe1db97d"
+        },
+        {
+            "active_time": 1673386806,
+            "biz_type": 18,
+            "category": "cz",
+            "create_time": 1673386806,
+            "icon": "smart/icon/1496476074_0.png",
+            "id": "56675605bcff4d11062e",
+            "ip": "67.190.41.187",
+            "lat": "39.2299",
+            "local_key": "7324c957110274f0",
+            "lon": "-106.8500",
+            "model": "MK11",
+            "name": "Sauna",
+            "online": true,
+            "owner_id": "81219732",
+            "product_id": "qCY4YFq02AP0i1Uu",
+            "product_name": "SmartHome",
+            "status": [
+                {
+                    "code": "switch_1",
+                    "value": false
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-07:00",
+            "uid": "az1662159548013Et3Yv",
+            "update_time": 1698952593,
+            "uuid": "56675605bcff4d11062e"
+        },
+        {
+            "active_time": 1673386415,
+            "biz_type": 18,
+            "category": "cz",
+            "create_time": 1673386415,
+            "icon": "smart/icon/1496476074_0.png",
+            "id": "15317547bcff4d09a774",
+            "ip": "67.190.41.187",
+            "lat": "39.2299",
+            "local_key": "72bed3197e784a27",
+            "lon": "-106.8500",
+            "model": "MK11",
+            "name": "Garage",
+            "online": true,
+            "owner_id": "81219732",
+            "product_id": "qCY4YFq02AP0i1Uu",
+            "product_name": "SmartHome",
+            "status": [
+                {
+                    "code": "switch_1",
+                    "value": false
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-07:00",
+            "uid": "az1662159548013Et3Yv",
+            "update_time": 1698946248,
+            "uuid": "15317547bcff4d09a774"
+        },
+        {
+            "active_time": 1673368893,
+            "biz_type": 18,
+            "category": "cz",
+            "create_time": 1673368893,
+            "icon": "smart/icon/1496476074_0.png",
+            "id": "56675605bcff4d0f4792",
+            "ip": "67.190.41.187",
+            "lat": "39.2299",
+            "local_key": "fbf7a2fd8df5b05d",
+            "lon": "-106.8500",
+            "model": "MK11",
+            "name": "Living Room",
+            "online": true,
+            "owner_id": "81219732",
+            "product_id": "qCY4YFq02AP0i1Uu",
+            "product_name": "SmartHome",
+            "status": [
+                {
+                    "code": "switch_1",
+                    "value": false
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-07:00",
+            "uid": "az1662159548013Et3Yv",
+            "update_time": 1698914399,
+            "uuid": "56675605bcff4d0f4792"
+        },
+        {
+            "active_time": 1662574571,
+            "biz_type": 18,
+            "category": "cz",
+            "create_time": 1662574571,
+            "icon": "smart/icon/1496476074_0.png",
+            "id": "56675605bcff4d111f55",
+            "ip": "67.190.41.187",
+            "lat": "39.2299",
+            "local_key": "1ed215636c1d7b88",
+            "lon": "-106.8500",
+            "model": "MK11",
+            "name": "Utility Room",
+            "online": true,
+            "owner_id": "81219732",
+            "product_id": "qCY4YFq02AP0i1Uu",
+            "product_name": "SmartHome",
+            "status": [
+                {
+                    "code": "switch_1",
+                    "value": false
+                },
+                {
+                    "code": "countdown_1",
+                    "value": 0
+                }
+            ],
+            "sub": false,
+            "time_zone": "-07:00",
+            "uid": "az1662159548013Et3Yv",
+            "update_time": 1698914396,
+            "uuid": "56675605bcff4d111f55"
+        }
+    ],
+    "success": true,
+    "t": 1698955354650,
+    "tid": "c3711ef879ba11ee946f2e28f447d5d3"
+}

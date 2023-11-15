@@ -1,30 +1,41 @@
 import json
+import time
 
 
 # from file
-f = open('jimmy_valve.json')
+f = open('paul_temp.json')
 devices = json.load(f)
 list = json.dumps(devices, indent=4)
-
+#print(list)
 for i in devices['result']:
-    print(i['name'])
-    #print(i['product_name'])
-    #print(i['id'])
-    #print(i['product_id'])
+    print(i['product_name'])
+    print(i['id'])
     #print(i['status'])
-    for i in i['status'][0:1]:
+for i in i['status'][0:1]:
+    print(i['code'])
+    print(i['value'])
+    #time.sleep(.1)
+for i in devices['result']:    
+    for i in i['status'][1:2]:
         print(i['code'])
         print(i['value'])
-    
+for i in devices['result']:    
+    for i in i['status'][2:3]:
+        print(i['code'])
+        print(i['value'])  
+    if i['value'] == "middle":
+            print("middle")
+for i in devices['result']:    
+    for i in i['status'][3:4]:
+        print(i['code'])
+        print(i['value'])
+        
+        
+        
+        
     #for i in i['status'][1:2]:
     #    print(i['code'])
     #    print(i['value'])
-    
-
-
-
-
-
 
 """for i in devices['result']:
     # name = i['name']

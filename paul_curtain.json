@@ -1,0 +1,58 @@
+{
+"result": [
+        {
+            "active_time": 1698952549,
+            "biz_type": 18,
+            "category": "cl",
+            "create_time": 1698952549,
+            "icon": "smart/icon/ay1520042877959dqQoX/250790e5bd71b772cd88c3fc2f2a9d4a.png",
+            "id": "eb1c6aa918d625a802z74i",
+            "ip": "",
+            "lat": "39.0300",
+            "local_key": "`VJBFO%UCmN#d.F|",
+            "lon": "-77.3400",
+            "model": "AM22/AM25/AM28",
+            "name": "Bedroom",
+            "node_id": "040d84fffe1db97d",
+            "online": true,
+            "owner_id": "173735319",
+            "product_id": "zuz7f94z",
+            "product_name": "AOk_zigbee motor",
+            "status": [
+                {
+                    "code": "control",
+                    "value": "stop"
+                },
+                {
+                    "code": "percent_control",
+                    "value": 88
+                },
+                {
+                    "code": "percent_state",
+                    "value": 0
+                },
+                {
+                    "code": "control_back_mode",
+                    "value": "back"
+                },
+                {
+                    "code": "work_state",
+                    "value": "opening"
+                },
+                {
+                    "code": "fault",
+                    "value": 0
+                }
+            ],
+            "sub": true,
+            "time_zone": "-04:00",
+            "uid": "az1662159548013Et3Yv",
+            "update_time": 1698952729,
+            "uuid": "040d84fffe1db97d"
+        }
+        
+    ],
+    "success": true,
+    "t": 1698955354650,
+    "tid": "c3711ef879ba11ee946f2e28f447d5d3"
+}
