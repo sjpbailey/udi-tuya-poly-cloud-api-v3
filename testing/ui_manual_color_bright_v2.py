@@ -13,9 +13,9 @@ from tuya_bulb_control import Bulb
 
 # Office 'ebfc16d57ed374932cjqfk' # 804076608caab5d8ff58 # Garage 'ebfd4f4263bb769d99zjkq' sconce eb64341be3d433d8615eib
 bulb = Bulb(
-    client_id="txejpdfda9iwmn5cg2es",
-    secret_key="46d6072ffd724e0ba5ebeb5cc6b9dce9",
-    device_id="ebfc16d57ed374932cjqfk",
+    client_id="",
+    secret_key="",
+    device_id="",
     region_key="us",
 )
 #bulb.turn_on()

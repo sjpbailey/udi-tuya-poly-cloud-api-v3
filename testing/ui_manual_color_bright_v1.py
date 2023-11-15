@@ -13,9 +13,9 @@ from tuya_bulb_control import Bulb
 
 # Light Strip 'ebe097c0407da32084kvtr' # 804076608caab5d8ff58 # garage 'ebfd4f4263bb769d99zjkq' sconce eb64341be3d433d8615eib
 bulb = Bulb(
-    client_id="txejpdfda9iwmn5cg2es",
-    secret_key="46d6072ffd724e0ba5ebeb5cc6b9dce9",
-    device_id="ebe097c0407da32084kvtr",
+    client_id="",
+    secret_key="",
+    device_id="",
     region_key="us",
 )
 

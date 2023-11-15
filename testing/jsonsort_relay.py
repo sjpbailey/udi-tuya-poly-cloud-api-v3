@@ -6,12 +6,12 @@ import json
 import colorsys
 from tuya_bulb_control import Bulb
 
-ACCESS_ID = "txejpdfda9iwmn5cg2es"
-ACCESS_KEY = "46d6072ffd724e0ba5ebeb5cc6b9dce9"
+ACCESS_ID = "s"
+ACCESS_KEY = ""
 API_ENDPOINT = "https://openapi.tuyaus.com/"
 MQ_ENDPOINT = "wss://mqe.tuyaus.com:8285/"
 API_REGION = "us"
-API_UID = "az1610958067414WkfOO"
+API_UID = ""
 
 # from file
 # f = open('sample.json')
@@ -21,7 +21,7 @@ API_UID = "az1610958067414WkfOO"
 openapi = TuyaOpenAPI(API_ENDPOINT, ACCESS_ID, ACCESS_KEY)
 openapi.connect()
 
-response = openapi.get("/v1.0/users/az1610958067414WkfOO/devices")
+response = openapi.get("/v1.0/users/a/devices")
 #print(response)
 response1 = json.dumps(response, indent=4)
 print(response1)

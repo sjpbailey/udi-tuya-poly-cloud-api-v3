@@ -5,8 +5,8 @@ import time
 import json
 import colorsys
 
-ACCESS_ID = "txejpdfda9iwmn5cg2es"
-ACCESS_KEY = "46d6072ffd724e0ba5ebeb5cc6b9dce9"
+ACCESS_ID = ""
+ACCESS_KEY = ""
 API_ENDPOINT = "https://openapi.tuyaus.com/"
 MQ_ENDPOINT = "wss://mqe.tuyaus.com:8285/"
 API_REGION = "us"

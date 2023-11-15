@@ -15,9 +15,9 @@ from tuya_bulb_control import Bulb
 # "ebfc16d57ed374932cjqfk" #'ebe097c0407da32084kvtr'
 
 bulb = Bulb(
-    client_id="txejpdfda9iwmn5cg2es",
-    secret_key="46d6072ffd724e0ba5ebeb5cc6b9dce9",
-    device_id="ebfc16d57ed374932cjqfk",
+    client_id="",
+    secret_key="",
+    device_id="",
     region_key="us",
 )
 # def change_colour() -> NoReturn:
