@@ -23,9 +23,9 @@ tinytuya.set_debug(True)
 # Connect to Tuya Cloud
 c = tinytuya.Cloud(
     apiRegion="us",
-    apiKey="txejpdfda9iwmn5cg2es",
-    apiSecret="46d6072ffd724e0ba5ebeb5cc6b9dce9",
-    apiDeviceID="ebfc16d57ed374932cjqfk")
+    apiKey="",
+    apiSecret="",
+    apiDeviceID="")
 
 # Display list of devices
 devices = c.getdevices()
